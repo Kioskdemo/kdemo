@@ -48,23 +48,8 @@ export default function page() {
           name="name"
           placeholder="Enter Tax No."
           link="/pay-property/pay-property-form"
-          text={"Or"}
-          description={"Scan QR Code"}
-          Img={"/example-qr.webp"}
+          qrImg={"/example-qr.webp"}
         />
-        {/* <div className="flex flex-col justify-center items-center gap-20 text-[50px] my-[300px]">
-          <input
-            name="firstName"
-            placeholder="Enter Your BIN"
-            className="h-[100px] w-[700px] text-center rounded-2xl bg-gray-200"
-          />
-
-          <Link href={"/pay-property/pay-property-form"}>
-            <button className="w-[500px] h-[100px] bg-[#335F96] rounded-2xl text-white shadow-[-23px_23px_15px_-10px_rgba(0,0,0,0.3)]">
-              Confirm
-            </button>
-          </Link>
-        </div> */}
       </main>
     </div>
   );

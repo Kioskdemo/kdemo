@@ -195,7 +195,7 @@ const CustomKeyboard = ({
             ))}
           </div>
           {/* A-P */}
-          <div className="">
+          <div className="flex">
             {["A"].map((key) => (
               <button
                 className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
@@ -277,14 +277,16 @@ const CustomKeyboard = ({
                 {key}
               </button>
             ))}
-            {["Del"].map((key) => (
-              <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
-                key={key}
+            {[`~`].map((key) => (
+              <div
+                className="bg-white text-white border border-solid rounded-lg font-bold text-xs shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 onClick={() => handleKeyClick(key)}
               >
-                {key}
-              </button>
+                <div className="flex flex-col items-center justify-center">
+                  <img className="h-10 mt-[14px]" src="/backspace.png" alt="" />
+                  {key}
+                </div>
+              </div>
             ))}
           </div>
           {/* Z-M, Clear */}

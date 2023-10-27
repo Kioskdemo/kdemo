@@ -18,8 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
+        <div className="h-screen">
+          <Header
+            logoImg="/cebu-logo.png"
+            title="Welcome to the City of Cebu"
+            description="Transaction Kiosk"
+          />
+          <div className="mt-10">{children}</div>
+        </div>
       </body>
     </html>
   );
