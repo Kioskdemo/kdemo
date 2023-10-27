@@ -1,5 +1,4 @@
 import React from 'react';
-import './globals.css'
 
 export class ComponentToPrint extends React.PureComponent {
   render() {

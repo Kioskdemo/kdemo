@@ -1,10 +1,10 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
 import ModalPrint from "./ModalPrint";
 import ReactDOMServer, {
   renderToStaticMarkup,
   renderToString,
 } from "react-dom/server";
-import { ComponentToPrint } from "../PrintableContent";
+import { ComponentToPrint } from "./PrintableContent";
 
 interface CategoryQueProps {
   iconImg: ReactNode;
@@ -13,6 +13,7 @@ interface CategoryQueProps {
 
 const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  let componentRef = useRef(null);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -23,14 +24,7 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
   };
 
   const handlePopupPrint = () => {
-    const printWindow = window.open("", "", "width=800,height=400");
-
-    if (printWindow) {
-      const content = (
-        <div>
-          <ComponentToPrint />
-        </div>
-      );
+    
       const customStyle = `
         body {
           font-size: 12px;
@@ -42,24 +36,28 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
           margin-right: auto;
         }
         @media print {
-          .no-print {
-            display: none;
-          }
+          .no-print {display: none;}
           @page {
             size: auto;
             margin: 0;
           }
-          @page :first {
-            margin-top: 0;
-          }
+          @page :first {margin-top: 0;}
           @page :left {
-            margin-left: 0px;
-          }
+            margin-left: 0px;}
           @page :right {
-            margin-right: 0;
-          }
+            margin-right: 0;}
         }
       `;
+
+      const printWindow = window.open("", "","width=100,height=100");
+
+      if (printWindow) {
+        const content = (
+          <div>
+            <ComponentToPrint />
+          </div>
+        );
+
       printWindow.document.write(`
         <html>
         <head>
@@ -71,10 +69,6 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
         </body>
         </html>
       `);
-      printWindow.document.querySelectorAll(".no-print").forEach((element) => {
-        element.classList.add("hidden-on-print");
-      });
-      printWindow.document.write("</body></html>");
       printWindow.document.close();
       printWindow.print();
       printWindow.close();
@@ -82,9 +76,12 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
       alert("Pop-up window blocked. Please allow pop-ups for printing.");
     }
   };
+  
+  
 
   return (
-    <div className="w-[180px] h-[180px] bg-white rounded-[25%] text-[#335F96] shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)] border border-[#335F96] flex justify-center items-center">
+    <>
+      <div className="w-[180px] h-[180px] bg-white rounded-[25%] text-[#335F96] shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)] border border-[#335F96] flex justify-center items-center">
       <button onClick={() => { openModal(); handlePopupPrint(); }}>
         <div className="flex items-center flex-col p-5 gap-3 ">
           <div className="">{iconImg}</div>
@@ -99,6 +96,8 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
         text={"Please wait a moment"}
       />
     </div>
+    </>
+    
   );
 };
 
