@@ -24,16 +24,7 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
   };
 
   const handlePopupPrint = () => {
-    const printWindow = window.open("", "", "width=10,height=10");
-
-    if (printWindow) {
-      const content = (
-        <div>
-          <ComponentToPrint />
-        </div>
-      );
-
-      const customStyle = `
+    const customStyle = `
         body {
           font-size: 12px;
         }
@@ -57,16 +48,16 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
         }
       `;
 
-      const printWindow = window.open("", "", "width=100,height=100");
+    const printWindow = window.open("", "", "width=100,height=100");
 
-      if (printWindow) {
-        const content = (
-          <div>
-            <ComponentToPrint />
-          </div>
-        );
+    if (printWindow) {
+      const content = (
+        <div>
+          <ComponentToPrint />
+        </div>
+      );
 
-        printWindow.document.write(`
+      printWindow.document.write(`
         <html>
         <head>
           <style>${customStyle}</style>
@@ -77,39 +68,38 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
         </body>
         </html>
       `);
-        printWindow.document.close();
-        printWindow.print();
-        printWindow.close();
-      } else {
-        alert("Pop-up window blocked. Please allow pop-ups for printing.");
-      }
+      printWindow.document.close();
+      printWindow.print();
+      printWindow.close();
+    } else {
+      alert("Pop-up window blocked. Please allow pop-ups for printing.");
     }
-
-    return (
-      <>
-        <div className="w-[180px] h-[180px] bg-white rounded-[25%] text-[#335F96] shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)] border border-[#335F96] flex justify-center items-center">
-          <button
-            onClick={() => {
-              openModal();
-              handlePopupPrint();
-            }}
-          >
-            <div className="flex items-center flex-col p-5 gap-3 ">
-              <div className="">{iconImg}</div>
-              <span className="text-[17px] text-black">{text}</span>
-            </div>
-          </button>
-
-          <ModalPrint
-            isOpen={isModalOpen}
-            onClose={closeModal}
-            heading={"Printing Ticket"}
-            text={"Please wait a moment"}
-          />
-        </div>
-      </>
-    );
   };
+
+  return (
+    <>
+      <div className="w-[180px] h-[180px] bg-white rounded-[25%] text-[#335F96] shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)] border border-[#335F96] flex justify-center items-center">
+        <button
+          onClick={() => {
+            openModal();
+            handlePopupPrint();
+          }}
+        >
+          <div className="flex items-center flex-col p-5 gap-3 ">
+            <div className="">{iconImg}</div>
+            <span className="text-[17px] text-black">{text}</span>
+          </div>
+        </button>
+
+        <ModalPrint
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          heading={"Printing Ticket"}
+          text={"Please wait a moment"}
+        />
+      </div>
+    </>
+  );
 };
 
 export default CategoryQue;
