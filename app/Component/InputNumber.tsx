@@ -55,13 +55,13 @@ const InputNumber: React.FC<InputNumberProps> = ({
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px]">
+    <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px] relative">
       <input
         ref={inputFieldRef}
         value={inputValue}
         name={name}
         placeholder={placeholder}
-        className="text-center rounded-2xl bg-gray-300"
+        className="text-center rounded-2xl border-2 border-gray-400"
         onClick={(e) => {
           const cursorPosition = e.currentTarget.selectionStart || 0;
           setCursorPosition(cursorPosition);
@@ -69,11 +69,11 @@ const InputNumber: React.FC<InputNumberProps> = ({
       />
 
       <div className="flex flex-col justify-center items-center gap-10 py-[50px] text-[50px] relative">
-        <h1 className="w-[800px] h-[5px] bg-black"></h1>
+        <h1 className="w-[650px] h-[2px] bg-gray-500"></h1>
         <h1>Scan QR</h1>
-        <img src={qrImg} alt="" className="w-[300px]" />
+        <img src={qrImg} alt="" className="w-[150px]" />
       </div>
-      <div>
+      <div className="">
         <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
     </div>

@@ -10,7 +10,7 @@ import NextCancelBtn from "../Component/NextCancelBtn";
 
 export default function page() {
   return (
-    <div>
+    <div className="relative">
       <LabelStepper stepNum={0} />
       <main className="bgtax-image flex flex-col justify-center w-full pt-[40px]">
         <InputNumber
@@ -19,13 +19,15 @@ export default function page() {
           link="/pay-property/pay-property-form"
           qrImg={"/example-qr.webp"}
         />
-        <div className="flex gap-20 text-[30px] pt-10 justify-center">
-          <NextCancelBtn link={"/menu"} text={"Cancel"} bgcolor={"#ff0000"} />
-          <NextCancelBtn
-            link={"/pay-property/pay-property-form"}
-            text={"Next"}
-            bgcolor={"#335F96"}
-          />
+        <div className="flex gap-20 text-[30px] pt-10 justify-center absolute top-[113%] w-full">
+          <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
+          <div className="text-white">
+            <NextCancelBtn
+              link={"/pay-property/pay-property-form"}
+              text={"Next"}
+              bgcolor={"#335F96"}
+            />
+          </div>
         </div>
       </main>
     </div>

@@ -61,17 +61,15 @@ export default function page() {
               <p>800.00</p>
             </div>
           </div> */}
-      <div className="flex text-[30px] gap-20 justify-center pt-10">
-        <NextCancelBtn
-          link={"/pay-property"}
-          text={"Cancel"}
-          bgcolor={"#ff0000"}
-        />
-        <NextCancelBtn
-          link={"/pay-property/pay-property-form/payment-info"}
-          text={"Next"}
-          bgcolor={"#335F96"}
-        />
+      <div className="flex text-[30px] gap-20 justify-center pt-10 absolute top-[90%] w-full">
+        <NextCancelBtn link={"/pay-property"} text={"Back"} bgcolor={"#fff"} />
+        <div className="text-white">
+          <NextCancelBtn
+            link={"/pay-property/pay-property-form/payment-info"}
+            text={"Next"}
+            bgcolor={"#335F96"}
+          />
+        </div>
       </div>
     </div>
   );

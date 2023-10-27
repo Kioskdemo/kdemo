@@ -25,17 +25,19 @@ export default function page() {
 
         <PaymentForm label={"Amount"} placeholder={"Type Here"} size={15} />
       </div>
-      <div className="flex gap-20 text-[30px] justify-center pt-10">
+      <div className="flex gap-20 text-[30px] justify-center pt-10 absolute top-[90%] w-full">
         <NextCancelBtn
           link={"/pay-business/pay-business-form"}
-          text={"Cancel"}
-          bgcolor={"#ff0000"}
+          text={"Back"}
+          bgcolor={"#fff"}
         />
-        <NextCancelBtn
-          link={"/pay-business/pay-business-form/payment-info/payment-type"}
-          text={"Next"}
-          bgcolor={"#335F96"}
-        />
+        <div className="text-white">
+          <NextCancelBtn
+            link={"/pay-business/pay-business-form/payment-info/payment-type"}
+            text={"Next"}
+            bgcolor={"#005893"}
+          />
+        </div>
       </div>
     </div>
   );

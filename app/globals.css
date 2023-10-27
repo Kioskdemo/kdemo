@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer components {
+  * {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+
   /* custom css for background image */
 
   .bglandingpage-image {
@@ -14,7 +21,7 @@
   }
 
   .bgqueue-image {
-    background-image: url("../public/bg-queque.png");
+    background-image: url("../public/bg-logo.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,7 +29,7 @@
   }
 
   .bgmenu-image {
-    background-image: url("../public/bg-menu.png");
+    background-image: url("../public/bg-logo.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -30,7 +37,7 @@
   }
 
   .bgpaybusiness-image {
-    background-image: url("../public/bg-paybusiness.png");
+    background-image: url("../public/bg-logo.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,7 +45,7 @@
   }
 
   .bgtax-image {
-    background-image: url("../public/bg-tax.png");
+    background-image: url("../public/bg-logo.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,7 +53,7 @@
   }
 
   .bgothers-image {
-    background-image: url("../public/bg-others.png");
+    background-image: url("../public/bg-logo.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
