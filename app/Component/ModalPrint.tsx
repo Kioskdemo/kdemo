@@ -21,7 +21,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, heading, text }) => {
     const timeLimit = 2000;
 
     const timer = setTimeout(() => {
-      router.push("/");
+      router.push("/menu");
     }, timeLimit);
 
     return () => clearTimeout(timer);

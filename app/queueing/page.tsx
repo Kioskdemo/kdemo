@@ -12,13 +12,13 @@ import BackButton from "../Component/BackButton";
 
 const LandingPage = () => {
   const componentRef = useRef(null);
-  
+
   return (
     <>
       <img className="hidden" src="/Qr.png" alt="" />
       <div className="bgqueue-image bg-no-repeat bg-cover">
         <div className="">
-          <BackButton text="Back" link={""} />
+          <BackButton text="Back" link={"/menu"} />
         </div>
         <div className="text-[45px] font-bold px-28 pt-5 relative grid grid-rows-3 grid-flow-col gap-5">
           <CategoryQue
