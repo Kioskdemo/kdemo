@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import ConfirmCancelBtn from "@/app/Component/ConfirmCancelBtn";
+
 import Form from "@/app/Component/Form";
+import NextCancelBtn from "@/app/Component/NextCancelBtn";
+import PageIndicator from "@/app/Component/PageIndicator";
 import Link from "next/link";
 import React from "react";
 import { MdKeyboardBackspace } from "react-icons/md";
@@ -9,36 +11,7 @@ import { MdKeyboardBackspace } from "react-icons/md";
 export default function page() {
   return (
     <div className="text-[20px] bgtax-image">
-      <header className="">
-        <div className="flex justify-between px-10 pt-10 gap-5">
-          <div className="text-center flex flex-col items-center basis-1/4">
-            <div className="w-[80px] h-[80px] bg-white rounded-[50%] border border-[#335F96] flex items-center justify-center flex-col text-[40px]">
-              1
-            </div>
-            <span>View Information</span>
-          </div>
-          <div className="text-center flex flex-col items-center basis-1/4">
-            <div className="w-[80px] h-[80px] bg-white rounded-[50%] border border-[#335F96] flex items-center justify-center flex-col text-[40px]">
-              2{" "}
-            </div>
-            <span>Confirm Payment</span>
-          </div>
-          <div className="text-center flex flex-col items-center basis-1/4">
-            <div className="w-[80px] h-[80px] bg-white rounded-[50%] border border-[#335F96] flex items-center justify-center flex-col text-[40px]">
-              3
-            </div>
-            <span>Payment Type</span>
-          </div>
-        </div>
-      </header>
-
-      <Link
-        className="text-[30px] flex items-center gap-2 p-5 m-[20px] w-[200px]"
-        href={"/other-payments"}
-      >
-        <MdKeyboardBackspace size={40} className="text-[#335F96]" />
-        <p>Back</p>
-      </Link>
+      <PageIndicator stepNum={0} />
       <div className="flex justify-center ">
         <Form label={"Last Name"} placeholder={"Type Here"} size={8} />
         <Form label={"First Name"} placeholder={"Type Here"} size={8} />
@@ -62,17 +35,19 @@ export default function page() {
         <Form label={"Tel No."} placeholder={"Type Here"} size={15} />
       </div>
       <Form label={"Occupation"} placeholder={"Type Here"} size={38} />
-      <div className="flex justify-center gap-20">
-        <ConfirmCancelBtn
-          text={"Cancel"}
-          link={"/menu"}
-          bgcolor={"#d3010cee"}
+      <div className="flex gap-20 text-[30px] justify-center pt-10 absolute top-[90%] w-full">
+        <NextCancelBtn
+          link={"/pay-business/pay-business-form"}
+          text={"Back"}
+          bgcolor={"#fff"}
         />
-        <ConfirmCancelBtn
-          text={"Confirm"}
-          link={"/other-payments/cedula/payment-info"}
-          bgcolor={"#335F96"}
-        />
+        <div className="text-white">
+          <NextCancelBtn
+            link={"/pay-business/pay-business-form/payment-info/payment-type"}
+            text={"Next"}
+            bgcolor={"#005893"}
+          />
+        </div>
       </div>
     </div>
   );

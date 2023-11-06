@@ -9,22 +9,7 @@ export default function page() {
     <div className="bgtax-image text-[25px]">
       <LabelStepper stepNum={2} />
 
-      <PaymentForm label={"Paid By"} placeholder={"Type Here"} size={38} />
-      <PaymentForm
-        label={"Payer Address"}
-        placeholder={"Type Here"}
-        size={38}
-      />
-      <PaymentForm label={"Particulars"} placeholder={"Type Here"} size={38} />
-      <div className="flex justify-center">
-        <PaymentForm
-          label={"Particulars"}
-          placeholder={"Type Here"}
-          size={15}
-        />
-
-        <PaymentForm label={"Amount"} placeholder={"Type Here"} size={15} />
-      </div>
+      <PaymentForm placeholder={"Type Here"} />
 
       <div className="flex text-[30px] gap-20 justify-center pt-10 absolute top-[90%] w-full">
         <NextCancelBtn

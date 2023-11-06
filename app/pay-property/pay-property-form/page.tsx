@@ -1,42 +1,80 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 
-import Form from "@/app/Component/Form";
+import InputText from "@/app/Component/InputText";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/PageIndicator";
-import React from "react";
+import React, { useRef } from "react";
 
 export default function page() {
+  const inputRef = useRef<HTMLInputElement | null>(null);
   return (
     <div className="bgtax-image text-[25px]">
       <LabelStepper stepNum={1} />
 
       <div className="flex justify-center ">
-        <Form label={"ARP/TD No."} placeholder={"Type Here"} size={15} />
-        <Form
+        <InputText
+          label={"ARP/TD No."}
+          placeholder={"Type Here"}
+          size={10}
+          inputRef={inputRef}
+          value={""}
+        />
+        <InputText
           label={"Property Identification No."}
           placeholder={"Type Here"}
-          size={15}
+          size={10}
+          inputRef={inputRef}
+          value={""}
         />
       </div>
-      <Form label={"Owner"} placeholder={"Type Here"} size={38} />
-      <Form label={"Address"} placeholder={"Type Here"} size={38} />
+      <InputText
+        label={"Owner"}
+        placeholder={"Type Here"}
+        size={38}
+        inputRef={inputRef}
+        value={""}
+      />
+      <InputText
+        label={"Address"}
+        placeholder={"Type Here"}
+        size={38}
+        inputRef={inputRef}
+        value={""}
+      />
       <div className="flex justify-center ">
-        <Form label={"OCT/TCT/CLOA No."} placeholder={"Type Here"} size={15} />
+        <InputText
+          label={"OCT/TCT/CLOA No."}
+          placeholder={"Type Here"}
+          size={15}
+          inputRef={inputRef}
+          value={""}
+        />
 
-        <Form label={"Lot No."} placeholder={"Type Here"} size={15} />
+        <InputText
+          label={"Lot No."}
+          placeholder={"Type Here"}
+          size={15}
+          inputRef={inputRef}
+          value={""}
+        />
       </div>
       <div className="flex justify-center ">
-        <Form
+        <InputText
           label={"Municipal Assessor"}
           placeholder={"Type Here"}
           size={15}
+          inputRef={inputRef}
+          value={""}
         />
 
-        <Form
+        <InputText
           label={"Provincial Assessor"}
           placeholder={"Type Here"}
           size={15}
+          inputRef={inputRef}
+          value={""}
         />
       </div>
 
