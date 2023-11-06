@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { MdKeyboardBackspace } from "react-icons/md";
-import InputNumber from "../Component/InputNumber";
+import InputNumber from "../Component/BINform";
 
 export default function page() {
   return (

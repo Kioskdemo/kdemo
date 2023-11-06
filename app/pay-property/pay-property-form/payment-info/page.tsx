@@ -1,4 +1,4 @@
-import ConfirmCancelBtn from "@/app/Component/ConfirmCancelBtn";
+import ConfirmCancelBtn from "@/app/Component/NextCancelBtn";
 import PaymentForm from "@/app/Component/PaymentForm";
 import Link from "next/link";
 import React from "react";

@@ -1,40 +1,109 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+"use client";
 
-import BackButton from "@/app/Component/BackButton";
-import ConfirmCancelBtn from "@/app/Component/ConfirmCancelBtn";
-import Form from "@/app/Component/Form";
+import React, { useRef, useState } from "react";
+import InputText from "@/app/Component/InputText";
+import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/PageIndicator";
-import React from "react";
+import CustomKeyboard from "@/app/Functions/CustomKeyboard";
 
-export default function page() {
+export default function Page() {
+  const inputRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  const [inputValues, setInputValues] = useState(["", "", "", "", "", ""]);
+  const activeInputRef = useRef(null);
+
+  const setCursorPosition = (position: number) => {
+    const activeInput = activeInputRef.current as HTMLInputElement | null;;
+    if (activeInput) {
+      setTimeout(() => {
+        activeInput.selectionStart = position;
+        activeInput.selectionEnd = position;
+        activeInput.focus();
+      }, 0);
+    }
+  };
+
+  const handleKeyClick = (key: string) => {
+    const activeInput = activeInputRef.current as HTMLInputElement | null;
+    if (activeInput) {
+      const cursorPosition = activeInput?.selectionStart || 0;
+      const inputIndex = inputRefs.findIndex((ref) => ref.current === activeInput);
+
+      if (key === "CLEAR") {
+        inputValues[inputIndex] = "";
+      } else if (key === "~") {
+        if (cursorPosition > 0) {
+          inputValues[inputIndex] =
+            inputValues[inputIndex].slice(0, cursorPosition - 1) +
+            inputValues[inputIndex].slice(cursorPosition);
+          setCursorPosition(cursorPosition - 1);
+        }
+      } else {
+        inputValues[inputIndex] =
+          inputValues[inputIndex].slice(0, cursorPosition) +
+          key +
+          inputValues[inputIndex].slice(cursorPosition);
+        setCursorPosition(cursorPosition + 1);
+      }
+
+      setInputValues([...inputValues]);
+    }
+  };
+
+  const inputConfig = [
+    { label: "BIN", placeholder: "Type Here", size: 15 },
+    { label: "Type", placeholder: "Type Here", size: 15 },
+    { label: "Trade Name", placeholder: "Type Here", size: 38 },
+    { label: "Amount", placeholder: "Type Here", size: 7 },
+    { label: "Year", placeholder: "Type Here", size: 7 },
+    { label: "Quarter", placeholder: "Type Here", size: 7 },
+  ];
+
+  const inputComponents = inputConfig.map((config, index) => (
+    <InputText
+      key={index}
+      label={config.label}
+      placeholder={config.placeholder}
+      size={config.size}
+      inputRef={inputRefs[index]}
+      value={inputValues[index]}
+      name="" 
+      onclick={(e) => {
+        activeInputRef.current = inputRefs[index].current;
+        const cursorPosition = e.currentTarget.selectionStart || 0;
+        setCursorPosition(cursorPosition);
+      }}    
+    />
+  ));
+
   return (
     <div className="bgtax-image text-[25px]">
       <LabelStepper stepNum={1} />
-      <BackButton text="back" link={"/pay-business"} />
-      <div className="flex justify-center ">
-        <Form label={"BIN"} placeholder={"Type Here"} size={15} />
-        <Form label={"Type"} placeholder={"Type Here"} size={15} />
+      <div className="flex justify-center">{inputComponents.slice(0, 2)}</div>
+      {inputComponents[2]}
+      <div className="flex justify-center">{inputComponents.slice(3, 6)}</div>
+      <div>
+        <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
-      <Form label={"Trade Name"} placeholder={"Type Here"} size={38} />
-      <div className="flex justify-center">
-        <Form label={"Amount"} placeholder={"Type Here"} size={7} />
-
-        <Form label={"Year"} placeholder={"Type Here"} size={7} />
-
-        <Form label={"Quarter"} placeholder={"Type Here"} size={7} />
-      </div>
-      <div className="flex justify-center gap-20">
-        <ConfirmCancelBtn
-          text={"Cancel"}
-          link={"/menu"}
-          bgcolor={"#d3010cee"}
-        />
-        <ConfirmCancelBtn
-          text={"Confirm"}
-          link={"/pay-business/pay-business-form/payment-info"}
-          bgcolor={"#335F96"}
-        />
+      <div className="flex gap-20 text-[30px] justify-center pt-10 absolute top-[90%] w-full">
+        <NextCancelBtn link="/pay-business" text="Back" bgcolor="#fff" />
+        <div className="text-white">
+          <NextCancelBtn
+            link="/pay-business/pay-business-form/payment-info"
+            text="Next"
+            bgcolor="#005893"
+          />
+        </div>
       </div>
     </div>
   );

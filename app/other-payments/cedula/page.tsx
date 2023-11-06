@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import ConfirmCancelBtn from "@/app/Component/ConfirmCancelBtn";
-import Form from "@/app/Component/Form";
+import ConfirmCancelBtn from "@/app/Component/NextCancelBtn";
+import Form from "@/app/Component/InputText";
 import Link from "next/link";
 import React from "react";
 import { MdKeyboardBackspace } from "react-icons/md";
