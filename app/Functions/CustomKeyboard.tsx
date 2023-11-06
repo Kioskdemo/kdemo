@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/jsx-key */
 import React from "react";
 
 const CustomKeyboard = ({
@@ -10,10 +12,10 @@ const CustomKeyboard = ({
       {/* flex justify-center items-center h-screen */}
       <div className="flex justify-center items-centers">
         {/* Number container */}
-        <div className="bg-white">
+        <div className="">
           {["1"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -22,7 +24,7 @@ const CustomKeyboard = ({
           ))}
           {["2"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -31,7 +33,7 @@ const CustomKeyboard = ({
           ))}
           {["3"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -40,7 +42,7 @@ const CustomKeyboard = ({
           ))}
           {["4"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -49,7 +51,7 @@ const CustomKeyboard = ({
           ))}
           {["5"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -58,7 +60,7 @@ const CustomKeyboard = ({
           ))}
           {["6"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -67,7 +69,7 @@ const CustomKeyboard = ({
           ))}
           {["7"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -76,7 +78,7 @@ const CustomKeyboard = ({
           ))}
           {["8"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -85,7 +87,7 @@ const CustomKeyboard = ({
           ))}
           {["9"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -94,7 +96,7 @@ const CustomKeyboard = ({
           ))}
           {["0"].map((key) => (
             <button
-              className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+              className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
               key={key}
               onClick={() => handleKeyClick(key)}
             >
@@ -105,7 +107,7 @@ const CustomKeyboard = ({
           <div className="">
             {["Q"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -114,7 +116,7 @@ const CustomKeyboard = ({
             ))}
             {["W"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -123,7 +125,7 @@ const CustomKeyboard = ({
             ))}
             {["E"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -132,7 +134,7 @@ const CustomKeyboard = ({
             ))}
             {["R"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -141,7 +143,7 @@ const CustomKeyboard = ({
             ))}
             {["T"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -150,7 +152,7 @@ const CustomKeyboard = ({
             ))}
             {["Y"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -159,7 +161,7 @@ const CustomKeyboard = ({
             ))}
             {["U"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -168,7 +170,7 @@ const CustomKeyboard = ({
             ))}
             {["I"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -177,7 +179,7 @@ const CustomKeyboard = ({
             ))}
             {["O"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -186,7 +188,7 @@ const CustomKeyboard = ({
             ))}
             {["P"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -198,7 +200,7 @@ const CustomKeyboard = ({
           <div className="flex">
             {["A"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -207,7 +209,7 @@ const CustomKeyboard = ({
             ))}
             {["S"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -216,7 +218,7 @@ const CustomKeyboard = ({
             ))}
             {["D"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -225,7 +227,7 @@ const CustomKeyboard = ({
             ))}
             {["F"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -234,7 +236,7 @@ const CustomKeyboard = ({
             ))}
             {["G"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -243,7 +245,7 @@ const CustomKeyboard = ({
             ))}
             {["H"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -252,7 +254,7 @@ const CustomKeyboard = ({
             ))}
             {["J"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -261,7 +263,7 @@ const CustomKeyboard = ({
             ))}
             {["K"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -270,7 +272,7 @@ const CustomKeyboard = ({
             ))}
             {["L"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -279,11 +281,15 @@ const CustomKeyboard = ({
             ))}
             {[`~`].map((key) => (
               <div
-                className="bg-white text-white border border-solid rounded-lg font-bold text-xs shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white text-white border border-gray-400 rounded-lg font-bold text-xs shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 onClick={() => handleKeyClick(key)}
               >
                 <div className="flex flex-col items-center justify-center">
-                  <img className="h-10 mt-[14px]" src="/backspace.png" alt="" />
+                  <img
+                    className="h-[30px] mt-[18px]"
+                    src="/backspace.png"
+                    alt=""
+                  />
                   {key}
                 </div>
               </div>
@@ -293,7 +299,7 @@ const CustomKeyboard = ({
           <div className="ml-[80px]">
             {["Z"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -302,7 +308,7 @@ const CustomKeyboard = ({
             ))}
             {["X"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -311,7 +317,7 @@ const CustomKeyboard = ({
             ))}
             {["C"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -320,7 +326,7 @@ const CustomKeyboard = ({
             ))}
             {["V"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -329,7 +335,7 @@ const CustomKeyboard = ({
             ))}
             {["B"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -338,7 +344,7 @@ const CustomKeyboard = ({
             ))}
             {["N"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -347,7 +353,7 @@ const CustomKeyboard = ({
             ))}
             {["M"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
@@ -356,7 +362,7 @@ const CustomKeyboard = ({
             ))}
             {["CLEAR"].map((key) => (
               <button
-                className="bg-white border border-solid rounded-lg font-bold text-2xl shadow-[10px_-10px_23px_0px_rgba(0,0,0,0.3)] w-[120px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[120px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >

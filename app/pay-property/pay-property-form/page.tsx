@@ -1,78 +1,89 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import ConfirmCancelBtn from "@/app/Component/NextCancelBtn";
-import Form from "@/app/Component/InputText";
-import Link from "next/link";
-import React from "react";
-import { MdKeyboardBackspace } from "react-icons/md";
+
+import InputText from "@/app/Component/InputText";
+import NextCancelBtn from "@/app/Component/NextCancelBtn";
+import LabelStepper from "@/app/Component/PageIndicator";
+import React, { useRef } from "react";
 
 export default function page() {
+  const inputRef = useRef<HTMLInputElement | null>(null);
   return (
     <div className="bgtax-image text-[25px]">
-      <header className="text-[20px]">
-        <div className="flex justify-between px-10 pt-10 gap-5">
-          <div className="text-center flex flex-col items-center basis-1/4">
-            <div className="w-[80px] h-[80px] bg-white rounded-[50%] border border-[#335F96] flex items-center justify-center flex-col text-[40px]">
-              1
-            </div>
-            <span>Enter BIN</span>
-          </div>
+      <LabelStepper stepNum={1} />
 
-          <div className="text-center flex flex-col items-center basis-1/4">
-            <div className="w-[80px] h-[80px] bg-white rounded-[50%] border border-[#335F96] flex items-center justify-center flex-col text-[40px]">
-              2
-            </div>
-            <span>View Information</span>
-          </div>
-          <div className="text-center flex flex-col items-center basis-1/4">
-            <div className="w-[80px] h-[80px] bg-white rounded-[50%] border border-[#335F96] flex items-center justify-center flex-col text-[40px]">
-              3
-            </div>
-            <span>Confirm Payment</span>
-          </div>
-          <div className="text-center flex flex-col items-center basis-1/4">
-            <div className="w-[80px] h-[80px] bg-white rounded-[50%] border border-[#335F96] flex items-center justify-center flex-col text-[40px]">
-              4
-            </div>
-            <span>Payment Type</span>
-          </div>
-        </div>
-      </header>
-
-      <Link
-        className="text-[30px] flex items-center gap-2 p-5 m-[20px] w-[200px]"
-        href={"/pay-property"}
-      >
-        <MdKeyboardBackspace size={40} className="text-[#335F96]" />
-        <p>Back</p>
-      </Link>
       <div className="flex justify-center ">
-        <Form label={"ARP/TD No."} placeholder={"Type Here"} size={15} />
-        <Form
+        <InputText
+          label={"ARP/TD No."}
+          placeholder={"Type Here"}
+          size={10}
+          inputRef={inputRef}
+          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+            throw new Error("Function not implemented.");
+          } }        />
+        <InputText
           label={"Property Identification No."}
           placeholder={"Type Here"}
+          size={10}
+          inputRef={inputRef}
+          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+            throw new Error("Function not implemented.");
+          } }        />
+      </div>
+      <InputText
+        label={"Owner"}
+        placeholder={"Type Here"}
+        size={38}
+        inputRef={inputRef}
+        value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+          throw new Error("Function not implemented.");
+        } }      />
+      <InputText
+        label={"Address"}
+        placeholder={"Type Here"}
+        size={38}
+        inputRef={inputRef}
+        value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+          throw new Error("Function not implemented.");
+        } }      />
+      <div className="flex justify-center ">
+        <InputText
+          label={"OCT/TCT/CLOA No."}
+          placeholder={"Type Here"}
           size={15}
-        />
-      </div>
-      <Form label={"Owner"} placeholder={"Type Here"} size={38} />
-      <Form label={"Address"} placeholder={"Type Here"} size={38} />
-      <div className="flex justify-center ">
-        <Form label={"OCT/TCT/CLOA No."} placeholder={"Type Here"} size={15} />
+          inputRef={inputRef}
+          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+            throw new Error("Function not implemented.");
+          } }        />
 
-        <Form label={"Lot No."} placeholder={"Type Here"} size={15} />
+        <InputText
+          label={"Lot No."}
+          placeholder={"Type Here"}
+          size={15}
+          inputRef={inputRef}
+          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+            throw new Error("Function not implemented.");
+          } }        />
       </div>
       <div className="flex justify-center ">
-        <Form
+        <InputText
           label={"Municipal Assessor"}
           placeholder={"Type Here"}
           size={15}
-        />
+          inputRef={inputRef}
+          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+            throw new Error("Function not implemented.");
+          } }        />
 
-        <Form
+        <InputText
           label={"Provincial Assessor"}
           placeholder={"Type Here"}
           size={15}
-        />
+          inputRef={inputRef}
+          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+            throw new Error("Function not implemented.");
+          } }        />
       </div>
 
       {/* <div className="relative text-[30px] text-black flex justify-around bg-[#ffffff75]">
@@ -96,17 +107,15 @@ export default function page() {
               <p>800.00</p>
             </div>
           </div> */}
-      <div className="flex justify-center gap-20">
-        <ConfirmCancelBtn
-          text={"Cancel"}
-          link={"/menu"}
-          bgcolor={"#d3010cee"}
-        />
-        <ConfirmCancelBtn
-          text={"Confirm"}
-          link={"/pay-property/pay-property-form/payment-info"}
-          bgcolor={"#335F96"}
-        />
+      <div className="flex text-[30px] gap-20 justify-center pt-10 absolute top-[90%] w-full">
+        <NextCancelBtn link={"/pay-property"} text={"Back"} bgcolor={"#fff"} />
+        <div className="text-white">
+          <NextCancelBtn
+            link={"/pay-property/pay-property-form/payment-info"}
+            text={"Next"}
+            bgcolor={"#335F96"}
+          />
+        </div>
       </div>
     </div>
   );

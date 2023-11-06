@@ -16,7 +16,7 @@ const LandingPage = () => {
   return (
     <>
       <img className="hidden" src="/Qr.png" alt="" />
-      <div className="bg-queueimg bg-no-repeat bg-cover">
+      <div className="bgqueue-image bg-no-repeat bg-cover">
         <div className="">
           <BackButton text="Back" link={"/menu"} />
         </div>
@@ -30,12 +30,27 @@ const LandingPage = () => {
             iconImg={<BsFillBuildingFill size={50} />}
             text={"Construction Permit"}
           />
-          <CategoryQue iconImg={<AiFillHome size={50} />} text={"Real Property"} />
-          <CategoryQue iconImg={<AiFillStop size={50} />} text={"Ordinance Violations"} />
-          <CategoryQue iconImg={<AiFillCar size={50} />} text={"Vehicle Registrtion"} />
-          <CategoryQue iconImg={<GiHealthNormal size={50} />} text={"Health Permit"} />
+          <CategoryQue
+            iconImg={<AiFillHome size={50} />}
+            text={"Real Property"}
+          />
+          <CategoryQue
+            iconImg={<AiFillStop size={50} />}
+            text={"Ordinance Violations"}
+          />
+          <CategoryQue
+            iconImg={<AiFillCar size={50} />}
+            text={"Vehicle Registrtion"}
+          />
+          <CategoryQue
+            iconImg={<GiHealthNormal size={50} />}
+            text={"Health Permit"}
+          />
           <CategoryQue iconImg={<IoTicket size={50} />} text={"Queue"} />
-          <CategoryQue iconImg={<FaHelmetSafety size={50} />} text={"Work Permit"} />
+          <CategoryQue
+            iconImg={<FaHelmetSafety size={50} />}
+            text={"Work Permit"}
+          />
         </div>
       </div>
     </>

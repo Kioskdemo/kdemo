@@ -1,43 +1,28 @@
-import BackButton from "@/app/Component/BackButton";
-import ConfirmCancelBtn from "@/app/Component/NextCancelBtn";
+import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/PageIndicator";
 import PaymentForm from "@/app/Component/PaymentForm";
-import Link from "next/link";
+
 import React from "react";
-import { MdKeyboardBackspace } from "react-icons/md";
 
 export default function page() {
   return (
     <div className="bgtax-image text-[25px]">
       <LabelStepper stepNum={2} />
-      <BackButton text="back" link={"/pay-business/pay-business-form"} />
-      <PaymentForm label={"Paid By"} placeholder={"Type Here"} size={38} />
-      <PaymentForm
-        label={"Payer Address"}
-        placeholder={"Type Here"}
-        size={38}
-      />
-      <PaymentForm label={"Particulars"} placeholder={"Type Here"} size={38} />
-      <div className="flex justify-center">
-        <PaymentForm
-          label={"Particulars"}
-          placeholder={"Type Here"}
-          size={15}
-        />
+      <PaymentForm placeholder={"Type Here"} />
 
-        <PaymentForm label={"Amount"} placeholder={"Type Here"} size={15} />
-      </div>
-      <div className="flex justify-center gap-20">
-        <ConfirmCancelBtn
-          text={"Cancel"}
-          link={"/menu"}
-          bgcolor={"#d3010cee"}
+      <div className="flex gap-20 text-[30px] justify-center pt-10 absolute top-[90%] w-full">
+        <NextCancelBtn
+          link={"/pay-business/pay-business-form"}
+          text={"Back"}
+          bgcolor={"#fff"}
         />
-        <ConfirmCancelBtn
-          text={"Confirm"}
-          link={"/pay-business/pay-business-form/payment-info/payment-type"}
-          bgcolor={"#335F96"}
-        />
+        <div className="text-white">
+          <NextCancelBtn
+            link={"/pay-business/pay-business-form/payment-info/payment-type"}
+            text={"Next"}
+            bgcolor={"#005893"}
+          />
+        </div>
       </div>
     </div>
   );

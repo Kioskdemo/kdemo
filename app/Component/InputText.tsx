@@ -37,3 +37,4 @@ const InputText: React.FC<BusinessFormProps> = ({
 };
 
 export default InputText;
+

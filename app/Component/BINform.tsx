@@ -1,4 +1,5 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-img-element */
+
 import React, { useRef, useState } from "react";
 import CustomKeyboard from "../Functions/CustomKeyboard";
 
@@ -13,27 +14,29 @@ const InputNumber: React.FC<InputNumberProps> = ({
   name,
   placeholder,
   link,
-  qrImg
+  qrImg,
 }) => {
-
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const inputFieldRef = useRef<HTMLInputElement | null>(null);
 
   const handleKeyClick = (key: string) => {
-    if (key === 'CLEAR') {
-      setInputValue('');
-    } else if (key === '~') {
+    if (key === "CLEAR") {
+      setInputValue("");
+    } else if (key === "~") {
       const cursorPosition = inputFieldRef.current?.selectionStart || 0;
       if (cursorPosition > 0) {
         const updatedValue =
-          inputValue.slice(0, cursorPosition - 1) + inputValue.slice(cursorPosition);
+          inputValue.slice(0, cursorPosition - 1) +
+          inputValue.slice(cursorPosition);
         setInputValue(updatedValue);
         setCursorPosition(cursorPosition - 1);
       }
     } else {
       const cursorPosition = inputFieldRef.current?.selectionStart || 0;
       const updatedValue =
-        inputValue.slice(0, cursorPosition) + key + inputValue.slice(cursorPosition);
+        inputValue.slice(0, cursorPosition) +
+        key +
+        inputValue.slice(cursorPosition);
       setInputValue(updatedValue);
       setCursorPosition(cursorPosition + 1);
     }
@@ -52,30 +55,27 @@ const InputNumber: React.FC<InputNumberProps> = ({
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px]">
+    <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px] relative">
       <input
         ref={inputFieldRef}
         value={inputValue}
         name={name}
         placeholder={placeholder}
-        className="text-center rounded-2xl bg-gray-300"
+        className="text-center rounded-2xl border-2 border-gray-400"
         onClick={(e) => {
           const cursorPosition = e.currentTarget.selectionStart || 0;
           setCursorPosition(cursorPosition);
-        }}     
+        }}
       />
-      <Link href={link}>
-        <button className="w-[250px] h-[80px] bg-[#335F96] rounded-2xl text-white shadow-[-23px_23px_15px_-10px_rgba(0,0,0,0.3)]">
-          Confirm
-        </button>
-      </Link>
+
       <div className="flex flex-col justify-center items-center gap-10 py-[50px] text-[50px] relative">
-          <h1>Scan QR</h1>
-          <img src={qrImg} alt="" />
-        </div>
-      <div>
-          <CustomKeyboard handleKeyClick={handleKeyClick} />
-        </div>
+        <h1 className="w-[650px] h-[2px] bg-gray-500"></h1>
+        <h1>Scan QR</h1>
+        <img src={qrImg} alt="" className="w-[150px]" />
+      </div>
+      <div className="">
+        <CustomKeyboard handleKeyClick={handleKeyClick} />
+      </div>
     </div>
   );
 };

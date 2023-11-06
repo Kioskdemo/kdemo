@@ -24,19 +24,48 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
   };
 
   const handlePopupPrint = () => {
-    
-      const customStyle = `
+    const customStyle = `
         body {
-          font-size: 12px;
+          font-size: 10px;
+          font-weight: light;
         }
+       .layout {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        
+       }
+       .info h2 {
+        font-weight: light;
+        text-align: center;
+       }
+       #mid p {
+        font-weight: bold;
+        text-align: center;
+        font-size: 16px;
+       }
+       .absolute-img img {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 30px;
+       }
+       .absolute-content {
+        position: absolute;
+        content: "";
+        top: -7px;
+        right: 30px;
+     }
         img {
-          height: 100px;
+          height: 120px;
           display: block;
           margin-left: auto;
           margin-right: auto;
         }
         @media print {
-          .no-print {display: none;}
+          .no-print {
+            display: none;
+          }
           @page {
             size: auto;
             margin: 0;
@@ -49,14 +78,14 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
         }
       `;
 
-      const printWindow = window.open("", "","width=100,height=100");
+    const printWindow = window.open("", "", "width=1,height=1");
 
-      if (printWindow) {
-        const content = (
-          <div>
-            <ComponentToPrint />
-          </div>
-        );
+    if (printWindow) {
+      const content = (
+        <div>
+          <ComponentToPrint />
+        </div>
+      );
 
       printWindow.document.write(`
         <html>
@@ -64,40 +93,52 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
           <style>${customStyle}</style>
         </head>
         <body>
+        <div class="layout">
+        <div class="absolute-img"> 
         <img src="/Qr.png" alt="" />
-          ${ReactDOMServer.renderToString(content)}
+        </div>
+        <div class="absolute-content">
+      ${ReactDOMServer.renderToString(content)}
+        </div>
+        </div>
         </body>
         </html>
       `);
+
       printWindow.document.close();
       printWindow.print();
       printWindow.close();
+      // printWindow.blur();
+      // printWindow.opener.focus();
+      // printWindow.close();
     } else {
       alert("Pop-up window blocked. Please allow pop-ups for printing.");
     }
   };
-  
-  
 
   return (
     <>
       <div className="w-[180px] h-[180px] bg-white rounded-[25%] text-[#335F96] shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)] border border-[#335F96] flex justify-center items-center">
-      <button onClick={() => { openModal(); handlePopupPrint(); }}>
-        <div className="flex items-center flex-col p-5 gap-3 ">
-          <div className="">{iconImg}</div>
-          <span className="text-[17px] text-black">{text}</span>
-        </div>
-      </button>
+        <button
+          onClick={() => {
+            openModal();
+            handlePopupPrint();
+          }}
+        >
+          <div className="flex items-center flex-col p-5 gap-3 ">
+            <div className="">{iconImg}</div>
+            <span className="text-[17px] text-black">{text}</span>
+          </div>
+        </button>
 
-      <ModalPrint
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        heading={"Printing Ticket"}
-        text={"Please wait a moment"}
-      />
-    </div>
+        <ModalPrint
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          heading={"Printing Ticket"}
+          text={"Please wait a moment"}
+        />
+      </div>
     </>
-    
   );
 };
 

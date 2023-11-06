@@ -1,25 +1,18 @@
-import React from 'react';
+import React from "react";
 
 export class ComponentToPrint extends React.PureComponent {
   render() {
     return (
       <>
-        <div id="invoice-POS">
-          <center id="top">
-            <div className="info">
-              <h2>SBISTechs Inc</h2>
-            </div>
-          </center>
+        <div className="padding">
           <div id="mid">
             <div className="info">
-              <h2>Contact Info</h2>
-              <p className='text-2xl'>
-                Address : street city, state 0000<br />
-                Email   : JohnDoe@gmail.com<br />
-                Phone   : 555-555-5555<br />
-              </p>
-            </div >
-          </div >
+              <h2>Counter No.</h2>
+              <p className="text-2xl">C-001</p>
+              <h2>Queue No.</h2>
+              <p>Q-001</p>
+            </div>
+          </div>
         </div>
       </>
     );

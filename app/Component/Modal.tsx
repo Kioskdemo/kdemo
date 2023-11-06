@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import styles from "../Modal.module.css";
 import Link from "next/link";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 interface ModalProps {
   isOpen: boolean;
@@ -14,10 +15,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     <div className={styles.modalOverlay}>
       <div className="relative">
         <button
-          className="text-[30px] bg-red-500 w-[100px] h-[80px] text-white rounded-2xl absolute top-[-100px] right-0"
+          className="text-red-500 rounded-2xl absolute top-[15px] right-[15px]"
           onClick={onClose}
         >
-          <p>Close</p>
+          <IoCloseCircleOutline size={50} />
         </button>
         <form className="flex flex-col items-center gap-5 bg-white p-[100px] rounded-2xl">
           <label htmlFor="" className="flex flex-col items-center">
