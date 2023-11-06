@@ -2,6 +2,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 
+"use client";
+
 import InputText from "@/app/Component/InputText";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/PageIndicator";
@@ -19,52 +21,82 @@ export default function page() {
           placeholder={"Type Here"}
           size={10}
           inputRef={inputRef}
-          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+          value={""}
+          name={""}
+          onclick={function (
+            event: React.MouseEvent<HTMLInputElement, MouseEvent>
+          ): void {
             throw new Error("Function not implemented.");
-          } }        />
+          }}
+        />
         <InputText
           label={"Property Identification No."}
           placeholder={"Type Here"}
           size={10}
           inputRef={inputRef}
-          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+          value={""}
+          name={""}
+          onclick={function (
+            event: React.MouseEvent<HTMLInputElement, MouseEvent>
+          ): void {
             throw new Error("Function not implemented.");
-          } }        />
+          }}
+        />
       </div>
       <InputText
         label={"Owner"}
         placeholder={"Type Here"}
         size={38}
         inputRef={inputRef}
-        value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+        value={""}
+        name={""}
+        onclick={function (
+          event: React.MouseEvent<HTMLInputElement, MouseEvent>
+        ): void {
           throw new Error("Function not implemented.");
-        } }      />
+        }}
+      />
       <InputText
         label={"Address"}
         placeholder={"Type Here"}
         size={38}
         inputRef={inputRef}
-        value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+        value={""}
+        name={""}
+        onclick={function (
+          event: React.MouseEvent<HTMLInputElement, MouseEvent>
+        ): void {
           throw new Error("Function not implemented.");
-        } }      />
+        }}
+      />
       <div className="flex justify-center ">
         <InputText
           label={"OCT/TCT/CLOA No."}
           placeholder={"Type Here"}
           size={15}
           inputRef={inputRef}
-          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+          value={""}
+          name={""}
+          onclick={function (
+            event: React.MouseEvent<HTMLInputElement, MouseEvent>
+          ): void {
             throw new Error("Function not implemented.");
-          } }        />
+          }}
+        />
 
         <InputText
           label={"Lot No."}
           placeholder={"Type Here"}
           size={15}
           inputRef={inputRef}
-          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+          value={""}
+          name={""}
+          onclick={function (
+            event: React.MouseEvent<HTMLInputElement, MouseEvent>
+          ): void {
             throw new Error("Function not implemented.");
-          } }        />
+          }}
+        />
       </div>
       <div className="flex justify-center ">
         <InputText
@@ -72,18 +104,28 @@ export default function page() {
           placeholder={"Type Here"}
           size={15}
           inputRef={inputRef}
-          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+          value={""}
+          name={""}
+          onclick={function (
+            event: React.MouseEvent<HTMLInputElement, MouseEvent>
+          ): void {
             throw new Error("Function not implemented.");
-          } }        />
+          }}
+        />
 
         <InputText
           label={"Provincial Assessor"}
           placeholder={"Type Here"}
           size={15}
           inputRef={inputRef}
-          value={""} name={""} onclick={function (event: React.MouseEvent<HTMLInputElement, MouseEvent>): void {
+          value={""}
+          name={""}
+          onclick={function (
+            event: React.MouseEvent<HTMLInputElement, MouseEvent>
+          ): void {
             throw new Error("Function not implemented.");
-          } }        />
+          }}
+        />
       </div>
 
       {/* <div className="relative text-[30px] text-black flex justify-around bg-[#ffffff75]">

@@ -23,7 +23,7 @@ export default function Page() {
   const activeInputRef = useRef(null);
 
   const setCursorPosition = (position: number) => {
-    const activeInput = activeInputRef.current as HTMLInputElement | null;;
+    const activeInput = activeInputRef.current as HTMLInputElement | null;
     if (activeInput) {
       setTimeout(() => {
         activeInput.selectionStart = position;
@@ -37,7 +37,9 @@ export default function Page() {
     const activeInput = activeInputRef.current as HTMLInputElement | null;
     if (activeInput) {
       const cursorPosition = activeInput?.selectionStart || 0;
-      const inputIndex = inputRefs.findIndex((ref) => ref.current === activeInput);
+      const inputIndex = inputRefs.findIndex(
+        (ref) => ref.current === activeInput
+      );
 
       if (key === "CLEAR") {
         inputValues[inputIndex] = "";
@@ -77,12 +79,12 @@ export default function Page() {
       size={config.size}
       inputRef={inputRefs[index]}
       value={inputValues[index]}
-      name="" 
+      name=""
       onclick={(e) => {
         activeInputRef.current = inputRefs[index].current;
         const cursorPosition = e.currentTarget.selectionStart || 0;
         setCursorPosition(cursorPosition);
-      }}    
+      }}
     />
   ));
 
@@ -92,7 +94,7 @@ export default function Page() {
       <div className="flex justify-center">{inputComponents.slice(0, 2)}</div>
       {inputComponents[2]}
       <div className="flex justify-center">{inputComponents.slice(3, 6)}</div>
-      <div>
+      <div className="pt-[200px]">
         <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
       <div className="flex gap-20 text-[30px] justify-center pt-10 absolute top-[90%] w-full">
