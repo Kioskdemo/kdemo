@@ -66,7 +66,7 @@ export default function Page() {
   const inputConfig = [
     { label: "BIN", placeholder: "Type Here", size: 15 },
     { label: "Type", placeholder: "Type Here", size: 15 },
-    { label: "Trade Name", placeholder: "Type Here", size: 38 },
+    { label: "Trade Name", placeholder: "Type Here", size: 39 },
     { label: "Amount", placeholder: "Type Here", size: 7 },
     { label: "Year", placeholder: "Type Here", size: 7 },
     { label: "Quarter", placeholder: "Type Here", size: 7 },
