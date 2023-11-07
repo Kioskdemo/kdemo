@@ -1,4 +1,5 @@
 import CategoryOtherPayments from "@/app/Component/CategoryOtherPayments";
+import NextBackButton from "@/app/Component/Next&BackButton";
 import Link from "next/link";
 import React from "react";
 import { BsArrowLeftRight } from "react-icons/bs";
@@ -23,13 +24,7 @@ export default function page() {
           {paymentTypesComponents[1]}
           {paymentTypesComponents[2]}
           {paymentTypesComponents[3]}
-          <Link
-            className="text-[40px] flex items-center gap-5 p-5 m-[20px] w-[200px]"
-            href={"/other-payments"}
-          >
-            <BsArrowLeftRight size={60} className="text-[#335F96]" />
-            <p className="font-semibold">Back</p>
-          </Link>
+          <NextBackButton text={"Back"} link={"/other-payments"} />
         </div>
       </main>
     </div>

@@ -3,6 +3,8 @@ import React from "react";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { BsArrowLeftRight } from "react-icons/bs";
 import CategoryOtherPayments from "../Component/CategoryOtherPayments";
+import BackButton from "../Component/BackButton";
+import NextBackButton from "../Component/Next&BackButton";
 
 export default function page() {
   const paymentTypesConfig = [
@@ -20,13 +22,7 @@ export default function page() {
   return (
     <div>
       <main className="bgothers-image flex flex-col justify-center w-full">
-        <Link
-          className="text-[30px] flex items-center gap-2 p-5 m-[20px] w-[200px]"
-          href={"/menu"}
-        >
-          <MdKeyboardBackspace size={40} className="text-[#335F96]" />
-          <p>Back</p>
-        </Link>
+        <BackButton text={"Back"} link={"/menu"} />
         <div className="flex flex-col justify-center items-center gap-10 text-[35px]">
           {paymentTypesComponents[0]}
           {paymentTypesComponents[1]}
@@ -34,13 +30,10 @@ export default function page() {
           {paymentTypesComponents[3]}
           {paymentTypesComponents[4]}
 
-          <Link
-            className="text-[40px] flex items-center gap-5 p-5 m-[20px] w-[200px]"
-            href={"/other-payments/other-payments-2"}
-          >
-            <BsArrowLeftRight size={60} className="text-[#335F96]" />
-            <p className="font-semibold">Next</p>
-          </Link>
+          <NextBackButton
+            text={"Next"}
+            link={"/other-payments/other-payments-2"}
+          />
         </div>
       </main>
     </div>
