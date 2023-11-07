@@ -1,8 +1,6 @@
 import CategoryOtherPayments from "@/app/Component/CategoryOtherPayments";
 import NextBackButton from "@/app/Component/Next&BackButton";
-import Link from "next/link";
 import React from "react";
-import { BsArrowLeftRight } from "react-icons/bs";
 
 export default function page() {
   const paymentTypesConfig = [

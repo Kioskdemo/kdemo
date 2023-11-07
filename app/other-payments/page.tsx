@@ -1,7 +1,4 @@
-import Link from "next/link";
 import React from "react";
-import { MdKeyboardBackspace } from "react-icons/md";
-import { BsArrowLeftRight } from "react-icons/bs";
 import CategoryOtherPayments from "../Component/CategoryOtherPayments";
 import BackButton from "../Component/BackButton";
 import NextBackButton from "../Component/Next&BackButton";
@@ -29,7 +26,6 @@ export default function page() {
           {paymentTypesComponents[2]}
           {paymentTypesComponents[3]}
           {paymentTypesComponents[4]}
-
           <NextBackButton
             text={"Next"}
             link={"/other-payments/other-payments-2"}
