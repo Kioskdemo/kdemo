@@ -26,10 +26,12 @@ export default function page() {
           {paymentTypesComponents[2]}
           {paymentTypesComponents[3]}
           {paymentTypesComponents[4]}
-          <NextBackButton
-            text={"Next"}
-            link={"/other-payments/other-payments-2"}
-          />
+          <div className="absolute bottom-8">
+            <NextBackButton
+              text={"Next"}
+              link={"/other-payments/other-payments-2"}
+            />
+          </div>
         </div>
       </main>
     </div>

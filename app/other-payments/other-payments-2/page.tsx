@@ -1,3 +1,4 @@
+import BackButton from "@/app/Component/BackButton";
 import CategoryOtherPayments from "@/app/Component/CategoryOtherPayments";
 import NextBackButton from "@/app/Component/Next&BackButton";
 import React from "react";
@@ -16,13 +17,16 @@ export default function page() {
 
   return (
     <div>
-      <main className="bgothers-image flex flex-col justify-center w-full mt-[50px] pt-[50px]">
-        <div className="flex flex-col justify-center items-center gap-20 text-[35px]">
+      <main className="bgothers-image flex flex-col justify-center w-full">
+        <BackButton text={"Back"} link={"/menu"} />
+        <div className="flex flex-col justify-center items-center gap-10 text-[35px]">
           {paymentTypesComponents[0]}
           {paymentTypesComponents[1]}
           {paymentTypesComponents[2]}
           {paymentTypesComponents[3]}
-          <NextBackButton text={"Back"} link={"/other-payments"} />
+          <div className="absolute bottom-8">
+            <NextBackButton text={"Prev"} link={"/other-payments"} />
+          </div>
         </div>
       </main>
     </div>
