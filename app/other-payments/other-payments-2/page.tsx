@@ -1,36 +1,28 @@
+import CategoryOtherPayments from "@/app/Component/CategoryOtherPayments";
 import Link from "next/link";
 import React from "react";
 import { BsArrowLeftRight } from "react-icons/bs";
 
 export default function page() {
+  const paymentTypesConfig = [
+    { link: "/other-payments/cedula", text: "Police Clearance" },
+    { link: "", text: "Health Permit" },
+    { link: "", text: "Ordinance Violations" },
+    { link: "", text: "Work Permit" },
+  ];
+
+  const paymentTypesComponents = paymentTypesConfig.map((config, index) => (
+    <CategoryOtherPayments key={index} link={config.link} text={config.text} />
+  ));
+
   return (
     <div>
       <main className="bgothers-image flex flex-col justify-center w-full mt-[50px] pt-[50px]">
         <div className="flex flex-col justify-center items-center gap-20 text-[35px]">
-          <Link
-            href={""}
-            className="w-[500px] h-[150px] bg-[#335F96] rounded-2xl text-white flex items-center justify-center"
-          >
-            <h1>Police Clearance</h1>
-          </Link>
-          <Link
-            href={""}
-            className="w-[500px] h-[150px] bg-[#335F96] rounded-2xl text-white flex items-center justify-center"
-          >
-            <h1>Health Permit</h1>
-          </Link>
-          <Link
-            href={""}
-            className="w-[500px] h-[150px] bg-[#335F96] rounded-2xl text-white flex items-center justify-center"
-          >
-            <h1>Ordinance Violations</h1>
-          </Link>
-          <Link
-            href={""}
-            className="w-[500px] h-[150px] bg-[#335F96] rounded-2xl text-white flex items-center justify-center"
-          >
-            <h1>Work Permit</h1>
-          </Link>
+          {paymentTypesComponents[0]}
+          {paymentTypesComponents[1]}
+          {paymentTypesComponents[2]}
+          {paymentTypesComponents[3]}
           <Link
             className="text-[40px] flex items-center gap-5 p-5 m-[20px] w-[200px]"
             href={"/other-payments"}
