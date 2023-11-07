@@ -1,56 +1,100 @@
-import React from "react";
+'use client'
+import React, { useRef, useState } from "react";
+import InputText from "./InputText";
+import CustomKeyboard from "../Functions/CustomKeyboard";
 
 interface PaymentFormProps {
   placeholder: string;
 }
 
 const PaymentForm: React.FC<PaymentFormProps> = ({ placeholder }) => {
+  
+  const inputRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  const [inputValues, setInputValues] = useState(["", "", "", "", "", ""]);
+  const activeInputRef = useRef(null);
+
+  const setCursorPosition = (position: number) => {
+    const activeInput = activeInputRef.current as HTMLInputElement | null;;
+    if (activeInput) {
+      setTimeout(() => {
+        activeInput.selectionStart = position;
+        activeInput.selectionEnd = position;
+        activeInput.focus();
+      }, 0);
+    }
+  };
+
+  const handleKeyClick = (key: string) => {
+    const activeInput = activeInputRef.current as HTMLInputElement | null;
+    if (activeInput) {
+      const cursorPosition = activeInput?.selectionStart || 0;
+      const inputIndex = inputRefs.findIndex((ref) => ref.current === activeInput);
+
+      if (key === "CLEAR") {
+        inputValues[inputIndex] = "";
+      } else if (key === "~") {
+        if (cursorPosition > 0) {
+          inputValues[inputIndex] =
+            inputValues[inputIndex].slice(0, cursorPosition - 1) +
+            inputValues[inputIndex].slice(cursorPosition);
+          setCursorPosition(cursorPosition - 1);
+        }
+      } else {
+        inputValues[inputIndex] =
+          inputValues[inputIndex].slice(0, cursorPosition) +
+          key +
+          inputValues[inputIndex].slice(cursorPosition);
+        setCursorPosition(cursorPosition + 1);
+      }
+
+      setInputValues([...inputValues]);
+    }
+  };
+
+  const inputConfig = [
+    { label: "Paid by", placeholder: "Type Here", size: 50 },
+    { label: "Payer Address", placeholder: "Type Here", size: 50 },
+    { label: "Particulars", placeholder: "Type Here", size: 50 },
+    { label: "Amount", placeholder: "Type Here", size: 50 },
+  ];
+
+  const inputComponents = inputConfig.map((config, index) => (
+    <InputText
+      key={index}
+      label={config.label}
+      placeholder={config.placeholder}
+      size={config.size}
+      inputRef={inputRefs[index]}
+      value={inputValues[index]}
+      name="" 
+      onclick={(e) => {
+        activeInputRef.current = inputRefs[index].current;
+        const cursorPosition = e.currentTarget.selectionStart || 0;
+        setCursorPosition(cursorPosition);
+      }}    
+    />
+  ));
+  
   return (
-    <form action="" className="text-[30px] p-5 ">
-      <div className="grid grid-cols-1 grid-flow-row gap-2">
-        <label htmlFor="">Paid by</label>
-        <input
-          size={20}
-          name=""
-          placeholder={placeholder}
-          className="h-[70px] rounded-2xl bg-gray-100 p-5 shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)]"
-        />
-        <label htmlFor="">Payer Address</label>
-        <input
-          size={20}
-          name=""
-          placeholder={placeholder}
-          className="h-[70px] rounded-2xl bg-gray-100 p-5 shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)]"
-        />
-        <label htmlFor="">Particulars</label>
-        <input
-          size={20}
-          name=""
-          placeholder={placeholder}
-          className="h-[70px] rounded-2xl bg-gray-100 p-5 shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)]"
-        />
+    <div className="text-[25px]">
+      <div className="justify-center">
+        {inputComponents[0]}
+        {inputComponents[1]}
+        {inputComponents[2]}
+        {inputComponents[3]}
       </div>
-      <div className="grid grid-rows-1 grid-flow-col gap-4">
-        <div className="flex flex-col">
-          <label htmlFor="">Particulars</label>
-          <input
-            size={20}
-            name=""
-            placeholder={placeholder}
-            className="h-[70px] rounded-2xl bg-gray-100 p-5 shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)]"
-          />
-        </div>
-        <div className="flex flex-col">
-          <label htmlFor="">Amount</label>
-          <input
-            size={20}
-            name=""
-            placeholder={placeholder}
-            className="h-[70px] rounded-2xl bg-gray-100 p-5 shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)]"
-          />
-        </div>
+      <div className="m-14">
+        <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
-    </form>
+    </div>
   );
 };
 
