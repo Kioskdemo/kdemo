@@ -10,13 +10,13 @@ import NextCancelBtn from "@/app/Component/NextCancelBtn";
 const Page: React.FC = () => {
   return (
     <div className="bgtax-image text-[25px]">
-      <LabelStepper stepNum={0} title={"Enter Tax"} />
+      <LabelStepper stepNum={3} title={"Enter Tax"} />
       <div className="flex text-[40px] items-center flex-col mt-[150px] mb-[350px] ">
         <h1 className="font-bold uppercase">Choose Preferred payment type</h1>
         <div className="flex gap-20 pt-5">
           <PaymentType />
         </div>
-        <div className="flex justify-center absolute top-[93%] w-full">
+        <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
           <NextCancelBtn
             link={"/pay-property/pay-property-form/payment-info"}
             text={"Back"}

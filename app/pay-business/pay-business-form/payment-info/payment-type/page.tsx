@@ -16,7 +16,7 @@ const Page: React.FC = () => {
         <div className="flex gap-20 pt-5">
           <PaymentType />
         </div>
-        <div className="absolute top-[93%] w-full flex justify-center">
+        <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
           <NextCancelBtn
             link={"/pay-business/pay-business-form/payment-info"}
             text={"Back"}

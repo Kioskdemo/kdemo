@@ -5,16 +5,6 @@ import Link from "next/link";
 const LandingPage = () => {
   return (
     <main className="relative flex flex-col justify-center bglandingpage-image mt-[50px]">
-      {/* <div className=" absolute -z-10 w-full">
-        <Image
-          src="/bg-image.png"
-          alt="Background image"
-          quality={100}
-          width={5000}
-          height={1410}
-          className="opacity-50 object-cover h-[1920px]"
-        />
-      </div> */}
       <div className="w-full gap-36 my-[200px]">
         <div className=" py-5 px-5 my-10 text-center ">
           <h1 className="text-[70px] font-bold leading-none">
