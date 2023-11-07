@@ -6,22 +6,25 @@ import StepLabel from "@mui/material/StepLabel";
 
 interface LabelStepperProps {
   stepNum: number;
+  title: string;
 }
 
-const steps = [
-  "Enter BIN No",
-  "View Information",
-  "Payment Information",
-  "Confirm Payment",
-];
+const LabelStepper: React.FC<LabelStepperProps> = ({ stepNum, title }) => {
+  const steps = [
+    { title },
+    "View Information",
+    "Payment Information",
+    "Confirm Payment",
+  ];
 
-const LabelStepper: React.FC<LabelStepperProps> = ({ stepNum }) => {
   return (
     <Box sx={{ width: "100%" }}>
       <Stepper activeStep={stepNum} alternativeLabel>
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+        {steps.map((label, index) => (
+          <Step key={index}>
+            <StepLabel>
+              {typeof label === "string" ? label : label.title}
+            </StepLabel>
           </Step>
         ))}
       </Stepper>

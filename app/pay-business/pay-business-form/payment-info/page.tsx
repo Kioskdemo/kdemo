@@ -7,7 +7,7 @@ import React from "react";
 export default function page() {
   return (
     <div className="bgtax-image text-[25px]">
-      <LabelStepper stepNum={2} />
+      <LabelStepper stepNum={2} title={"Enter Bin"} />
       <PaymentForm placeholder={"Type Here"} />
 
       <div className="flex gap-20 text-[30px] justify-center pt-10 absolute top-[90%] w-full">

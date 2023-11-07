@@ -103,7 +103,7 @@ export default function page() {
 
   return (
     <div className="bgtax-image text-[25px]">
-      <LabelStepper stepNum={1} />
+      <LabelStepper stepNum={0} title={"Enter Tax"} />
       <div className="flex justify-center">{inputComponents.slice(0, 2)}</div>
       {inputComponents[2]}
       {inputComponents[3]}

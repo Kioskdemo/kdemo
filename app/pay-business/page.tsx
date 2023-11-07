@@ -7,7 +7,7 @@ import InputNumber from "../Component/BINform";
 export default function Page() {
   return (
     <div className="relative">
-      <LabelStepper stepNum={0} />
+      <LabelStepper stepNum={0} title={"Enter Bin"} />
       <div className="flex flex-col justify-center w-full bgpaybusiness-image pt-[40px]">
         <InputNumber
           name="InputValue"

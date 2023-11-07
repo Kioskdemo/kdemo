@@ -8,7 +8,7 @@ import NextCancelBtn from "../Component/NextCancelBtn";
 export default function page() {
   return (
     <div className="relative">
-      <LabelStepper stepNum={0} />
+      <LabelStepper stepNum={0} title={"Enter Tax"} />
       <main className="bgtax-image flex flex-col justify-center w-full pt-[40px]">
         <InputNumber
           name="name"
