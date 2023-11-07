@@ -33,13 +33,17 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
         display: flex;
         justify-content: start;
         align-items: start;
-        
+       }
+       .info {
+        padding-top: 30px;
+        text-align: center;
+        line-height: 3%;
        }
        .info h2 {
         font-weight: light;
         text-align: center;
        }
-       #mid p {
+       .info p {
         font-weight: bold;
         text-align: center;
         font-size: 16px;
@@ -54,7 +58,7 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
         position: absolute;
         content: "";
         top: -7px;
-        right: 30px;
+        right: 45px;
      }
         img {
           height: 120px;
