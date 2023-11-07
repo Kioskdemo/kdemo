@@ -13,6 +13,22 @@ import BackButton from "../Component/BackButton";
 const LandingPage = () => {
   const componentRef = useRef(null);
 
+  const queueConfig = [
+    { iconImg: <BsFillPersonFill size={50} />, text: "Cedula" },
+    { iconImg: <BsWater size={50} />, text: "Water" },
+    { iconImg: <BsFillBuildingFill size={50} />, text: "Construction Permit" },
+    { iconImg: <AiFillHome size={50} />, text: "Real Property" },
+    { iconImg: <AiFillStop size={50} />, text: "Ordinance Violations" },
+    { iconImg: <AiFillCar size={50} />, text: "Vehicle Registration" },
+    { iconImg: <GiHealthNormal size={50} />, text: "Health Permit" },
+    { iconImg: <IoTicket size={50} />, text: "Queue" },
+    { iconImg: <FaHelmetSafety size={50} />, text: "Work Permit" },
+  ];
+
+  const queueComponents = queueConfig.map((config, index) => (
+    <CategoryQue key={index} iconImg={config.iconImg} text={config.text} />
+  ));
+
   return (
     <>
       <img className="hidden" src="/Qr.png" alt="" />
@@ -21,36 +37,15 @@ const LandingPage = () => {
           <BackButton text="Back" link={"/menu"} />
         </div>
         <div className="text-[45px] font-bold px-28 pt-5 relative grid grid-rows-3 grid-flow-col gap-5">
-          <CategoryQue
-            iconImg={<BsFillPersonFill size={50} />}
-            text={"Cedula"}
-          />
-          <CategoryQue iconImg={<BsWater size={50} />} text={"Water"} />
-          <CategoryQue
-            iconImg={<BsFillBuildingFill size={50} />}
-            text={"Construction Permit"}
-          />
-          <CategoryQue
-            iconImg={<AiFillHome size={50} />}
-            text={"Real Property"}
-          />
-          <CategoryQue
-            iconImg={<AiFillStop size={50} />}
-            text={"Ordinance Violations"}
-          />
-          <CategoryQue
-            iconImg={<AiFillCar size={50} />}
-            text={"Vehicle Registrtion"}
-          />
-          <CategoryQue
-            iconImg={<GiHealthNormal size={50} />}
-            text={"Health Permit"}
-          />
-          <CategoryQue iconImg={<IoTicket size={50} />} text={"Queue"} />
-          <CategoryQue
-            iconImg={<FaHelmetSafety size={50} />}
-            text={"Work Permit"}
-          />
+          {queueComponents[0]}
+          {queueComponents[1]}
+          {queueComponents[2]}
+          {queueComponents[3]}
+          {queueComponents[4]}
+          {queueComponents[5]}
+          {queueComponents[6]}
+          {queueComponents[7]}
+          {queueComponents[8]}
         </div>
       </div>
     </>
