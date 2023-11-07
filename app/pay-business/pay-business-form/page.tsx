@@ -6,7 +6,7 @@
 import React, { useRef, useState } from "react";
 import InputText from "@/app/Component/InputText";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
-import LabelStepper from "@/app/Component/PageIndicator";
+import LabelStepper from "@/app/Component/LabelStepper";
 import CustomKeyboard from "@/app/Functions/CustomKeyboard";
 
 export default function Page() {
@@ -90,7 +90,7 @@ export default function Page() {
 
   return (
     <div className="bgtax-image text-[25px]">
-      <LabelStepper stepNum={1} />
+      <LabelStepper stepNum={1} title={"Enter Bin"} />
       <div className="flex justify-center">{inputComponents.slice(0, 2)}</div>
       {inputComponents[2]}
       <div className="flex justify-center">{inputComponents.slice(3, 6)}</div>
