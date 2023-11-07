@@ -2,7 +2,7 @@
 "use client";
 
 import PaymentType from "@/app/Component/PaymentType";
-import LabelStepper from "@/app/Component/PageIndicator";
+import LabelStepper from "@/app/Component/LabelStepper";
 
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 

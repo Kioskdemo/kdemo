@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import LabelStepper from "../Component/PageIndicator";
+import LabelStepper from "../Component/LabelStepper";
 import InputNumber from "../Component/BINform";
 import NextCancelBtn from "../Component/NextCancelBtn";
 

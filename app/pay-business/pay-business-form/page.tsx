@@ -6,7 +6,7 @@
 import React, { useRef, useState } from "react";
 import InputText from "@/app/Component/InputText";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
-import LabelStepper from "@/app/Component/PageIndicator";
+import LabelStepper from "@/app/Component/LabelStepper";
 import CustomKeyboard from "@/app/Functions/CustomKeyboard";
 
 export default function Page() {

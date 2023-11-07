@@ -1,5 +1,5 @@
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
-import LabelStepper from "@/app/Component/PageIndicator";
+import LabelStepper from "@/app/Component/LabelStepper";
 import PaymentForm from "@/app/Component/PaymentForm";
 
 import React from "react";
