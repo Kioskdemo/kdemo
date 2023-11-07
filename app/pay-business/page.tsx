@@ -6,7 +6,7 @@ import InputNumber from "../Component/BINform";
 
 export default function Page() {
   return (
-    <div className="relative">
+    <div className="">
       <LabelStepper stepNum={0} title={"Enter Bin"} />
       <div className="flex flex-col justify-center w-full bgpaybusiness-image pt-[40px]">
         <InputNumber
@@ -15,15 +15,16 @@ export default function Page() {
           link="/pay-business/pay-business-form"
           qrImg={"/Qr.png"}
         />
-      </div>
-      <div className="flex gap-20 text-[30px] justify-center pt-10  absolute top-[115%] w-full">
-        <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
-        <div className="text-white">
-          <NextCancelBtn
-            link={"/pay-business/pay-business-form"}
-            text={"Next"}
-            bgcolor={"#005893"}
-          />
+
+        <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
+          <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
+          <div className="text-white">
+            <NextCancelBtn
+              link={"/pay-business/pay-business-form"}
+              text={"Next"}
+              bgcolor={"#005893"}
+            />
+          </div>
         </div>
       </div>
     </div>

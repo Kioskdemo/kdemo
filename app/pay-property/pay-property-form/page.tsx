@@ -103,7 +103,7 @@ export default function page() {
 
   return (
     <div className="bgtax-image text-[25px]">
-      <LabelStepper stepNum={0} title={"Enter Tax"} />
+      <LabelStepper stepNum={1} title={"Enter Tax"} />
       <div className="flex justify-center">{inputComponents.slice(0, 2)}</div>
       {inputComponents[2]}
       {inputComponents[3]}
@@ -113,7 +113,7 @@ export default function page() {
         <div>
           <CustomKeyboard handleKeyClick={handleKeyClick} />
         </div>
-        <div className="flex text-[30px] gap-20 justify-center pt-10 absolute top-[90%] w-full">
+        <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
           <NextCancelBtn
             link={"/pay-property"}
             text={"Back"}

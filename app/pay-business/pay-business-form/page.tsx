@@ -97,7 +97,7 @@ export default function Page() {
       <div className="pt-[200px]">
         <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
-      <div className="flex gap-20 text-[30px] justify-center pt-10 absolute top-[90%] w-full">
+      <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
         <NextCancelBtn link="/pay-business" text="Back" bgcolor="#fff" />
         <div className="text-white">
           <NextCancelBtn
