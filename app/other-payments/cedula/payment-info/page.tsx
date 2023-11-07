@@ -8,7 +8,7 @@ import { MdKeyboardBackspace } from "react-icons/md";
 export default function page() {
   return (
     <div className="bgtax-image text-[25px]">
-      <LabelStepper stepNum={0} />
+      <LabelStepper stepNum={0} title={""} />
       <PaymentForm placeholder={"Type Here"} />
       <div className="flex gap-20 text-[30px] justify-center pt-10 absolute top-[90%] w-full">
         <NextCancelBtn

@@ -8,6 +8,7 @@ import { GiPayMoney } from "react-icons/gi";
 import { BsBuildings } from "react-icons/bs";
 import { MdOutlineOtherHouses } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import BackgroundImage from "../Component/BackgroundImage";
 
 export default function page() {
   const router = useRouter();
@@ -24,7 +25,8 @@ export default function page() {
 
   return (
     <div>
-      <main className="flex flex-col justify-center w-full bgmenu-image mt-[20px]">
+      <BackgroundImage />
+      <main className="flex flex-col justify-center w-full mt-[20px]">
         <ul className="text-[40px] m-[25px] font-bold">
           <Link href={"/queueing"} className="text-[#335F96]">
             <li className="border-2 bg-white shadow-[-23px_23px_15px_-10px_rgba(0,0,0,0.3)] rounded-2xl flex items-center flex-col p-[34px] m-[30px]">

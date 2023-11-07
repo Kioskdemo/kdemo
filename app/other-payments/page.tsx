@@ -2,6 +2,7 @@ import React from "react";
 import CategoryOtherPayments from "../Component/CategoryOtherPayments";
 import BackButton from "../Component/BackButton";
 import NextBackButton from "../Component/Next&BackButton";
+import BackgroundImage from "../Component/BackgroundImage";
 
 export default function page() {
   const paymentTypesConfig = [
@@ -18,7 +19,8 @@ export default function page() {
 
   return (
     <div>
-      <main className="bgothers-image flex flex-col justify-center w-full">
+      <BackgroundImage />
+      <main className=" flex flex-col justify-center w-full">
         <BackButton text={"Back"} link={"/menu"} />
         <div className="flex flex-col justify-center items-center gap-10 text-[35px]">
           {paymentTypesComponents[0]}

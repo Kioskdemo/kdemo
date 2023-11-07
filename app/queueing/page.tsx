@@ -9,6 +9,7 @@ import { IoTicket } from "react-icons/io5";
 import { FaHelmetSafety } from "react-icons/fa6";
 import CategoryQue from "../Component/CategoryQue";
 import BackButton from "../Component/BackButton";
+import BackgroundImage from "../Component/BackgroundImage";
 
 const LandingPage = () => {
   const componentRef = useRef(null);
@@ -31,22 +32,22 @@ const LandingPage = () => {
 
   return (
     <>
+      {" "}
+      <BackgroundImage />
       <img className="hidden" src="/Qr.png" alt="" />
-      <div className="bgqueue-image bg-no-repeat bg-cover">
-        <div className="">
-          <BackButton text="Back" link={"/menu"} />
-        </div>
-        <div className="text-[45px] font-bold px-28 pt-5 relative grid grid-rows-3 grid-flow-col gap-5">
-          {queueComponents[0]}
-          {queueComponents[1]}
-          {queueComponents[2]}
-          {queueComponents[3]}
-          {queueComponents[4]}
-          {queueComponents[5]}
-          {queueComponents[6]}
-          {queueComponents[7]}
-          {queueComponents[8]}
-        </div>
+      <div className="">
+        <BackButton text="Back" link={"/menu"} />
+      </div>
+      <div className="text-[45px] font-bold px-28 pt-5 relative grid grid-rows-3 grid-flow-col gap-5">
+        {queueComponents[0]}
+        {queueComponents[1]}
+        {queueComponents[2]}
+        {queueComponents[3]}
+        {queueComponents[4]}
+        {queueComponents[5]}
+        {queueComponents[6]}
+        {queueComponents[7]}
+        {queueComponents[8]}
       </div>
     </>
   );

@@ -5,10 +5,12 @@ import PaymentType from "@/app/Component/PaymentType";
 import LabelStepper from "@/app/Component/LabelStepper";
 
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
+import BackgroundImage from "@/app/Component/BackgroundImage";
 
 const Page: React.FC = () => {
   return (
-    <div className="bgtax-image text-[25px] ">
+    <div className="text-[25px] ">
+      <BackgroundImage />
       <LabelStepper stepNum={3} title={"Enter Bin"} />
 
       <div className="flex text-[40px] items-center flex-col mt-[150px] mb-[350px]">

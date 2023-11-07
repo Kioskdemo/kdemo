@@ -8,6 +8,7 @@ import InputText from "@/app/Component/InputText";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
 import CustomKeyboard from "@/app/Functions/CustomKeyboard";
+import BackgroundImage from "@/app/Component/BackgroundImage";
 
 export default function Page() {
   const inputRefs = [
@@ -89,7 +90,8 @@ export default function Page() {
   ));
 
   return (
-    <div className="bgtax-image text-[25px]">
+    <div className=" text-[25px]">
+      <BackgroundImage />
       <LabelStepper stepNum={1} title={"Enter Bin"} />
       <div className="flex justify-center">{inputComponents.slice(0, 2)}</div>
       {inputComponents[2]}

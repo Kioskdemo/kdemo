@@ -3,10 +3,12 @@ import LabelStepper from "@/app/Component/LabelStepper";
 import PaymentForm from "@/app/Component/PaymentForm";
 
 import React from "react";
+import BackgroundImage from "@/app/Component/BackgroundImage";
 
 export default function page() {
   return (
-    <div className="bgtax-image text-[25px]">
+    <div className=" text-[25px]">
+      <BackgroundImage />
       <LabelStepper stepNum={2} title={"Enter Bin"} />
       <PaymentForm placeholder={"Type Here"} />
       <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
