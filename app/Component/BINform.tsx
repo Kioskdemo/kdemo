@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React, { useRef, useState } from "react";
-import CustomKeyboard from "../Functions/CustomKeyboard";
+import CustomKeyboard from "./CustomKeyboard";
+import NextCancelBtn from "./NextCancelBtn";
 
 interface InputNumberProps {
   name: string;
@@ -55,7 +56,7 @@ const InputNumber: React.FC<InputNumberProps> = ({
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px] relative">
+    <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px]">
       <input
         ref={inputFieldRef}
         value={inputValue}
@@ -68,12 +69,17 @@ const InputNumber: React.FC<InputNumberProps> = ({
         }}
       />
 
-      <div className="flex flex-col justify-center items-center gap-10 py-[50px] text-[50px] relative">
-        <h1 className="w-[650px] h-[2px] bg-gray-500"></h1>
-        <h1>Scan QR</h1>
-        <img src={qrImg} alt="" className="w-[150px]" />
-      </div>
-      <div className="">
+      <div className="absolute bottom-8">
+        <div className="flex gap-24 text-[30px] justify-center mb-10">
+          <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
+          <div className="text-white">
+            <NextCancelBtn
+              link={"/pay-business/pay-business-form"}
+              text={"Next"}
+              bgcolor={"#005893"}
+            />
+          </div>
+        </div>
         <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
     </div>

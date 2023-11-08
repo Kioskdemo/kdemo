@@ -11,7 +11,6 @@ import CategoryQue from "../Component/CategoryQue";
 import BackButton from "../Component/BackButton";
 
 const LandingPage = () => {
-  const componentRef = useRef(null);
 
   const queueConfig = [
     { iconImg: <BsFillPersonFill size={50} />, text: "Cedula" },

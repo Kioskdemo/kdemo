@@ -1,9 +1,6 @@
 import React, { ReactNode, useRef, useState } from "react";
 import ModalPrint from "./ModalPrint";
-import ReactDOMServer, {
-  renderToStaticMarkup,
-  renderToString,
-} from "react-dom/server";
+import ReactDOMServer from "react-dom/server";
 import { ComponentToPrint } from "./PrintableContent";
 
 interface CategoryQueProps {
@@ -13,7 +10,6 @@ interface CategoryQueProps {
 
 const CategoryQue: React.FC<CategoryQueProps> = ({ iconImg, text }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  let componentRef = useRef(null);
 
   const openModal = () => {
     setIsModalOpen(true);

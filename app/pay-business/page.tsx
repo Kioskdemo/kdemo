@@ -15,17 +15,6 @@ export default function Page() {
           link="/pay-business/pay-business-form"
           qrImg={"/Qr.png"}
         />
-
-        <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
-          <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
-          <div className="text-white">
-            <NextCancelBtn
-              link={"/pay-business/pay-business-form"}
-              text={"Next"}
-              bgcolor={"#005893"}
-            />
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef, useState } from "react";
 import InputText from "./InputText";
-import CustomKeyboard from "../Functions/CustomKeyboard";
+import CustomKeyboard from "./CustomKeyboard";
 
 interface PaymentFormProps {
   placeholder: string;

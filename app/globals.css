@@ -9,6 +9,10 @@
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
       "Noto Color Emoji";
   }
+  
+  body {
+    touch-action: none;
+  }  
 
   /* custom css for background image */
 
