@@ -9,12 +9,13 @@ import { BsBuildings } from "react-icons/bs";
 import { MdOutlineOtherHouses } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import BackgroundImage from "../Component/BackgroundImage";
+import MenuButton from "../Component/MenuButton";
 
 export default function page() {
   const router = useRouter();
 
   useEffect(() => {
-    const timeLimit = 10000;
+    const timeLimit = 1000000;
 
     const timer = setTimeout(() => {
       router.push("/");
@@ -23,75 +24,69 @@ export default function page() {
     return () => clearTimeout(timer);
   });
 
+  const menuConfig = [
+    {
+      link: "/queueing",
+      iconImg: (
+        <BsTicketDetailed
+          size={150}
+          className="mr-[40px] ml-[20px] text-[#1b1b1b]"
+        />
+      ),
+      title: "Queue Number",
+      description: "Lorem dolor sit amet",
+    },
+    {
+      link: "/pay-business",
+      iconImg: (
+        <GiPayMoney size={150} className="mr-[40px] ml-[20px] text-[#1b1b1b]" />
+      ),
+      title: "Pay Business",
+      description: "Lorem dolor sit amet consectetur",
+    },
+    {
+      link: "/pay-property",
+      iconImg: (
+        <BsBuildings
+          size={150}
+          className="mr-[40px] ml-[20px] text-[#1b1b1b]"
+        />
+      ),
+      title: "Pay Property",
+      description: "Lorem dolor sit amet consectetur.",
+    },
+    {
+      link: "/other-payments",
+      iconImg: (
+        <MdOutlineOtherHouses
+          size={150}
+          className="mr-[40px] ml-[20px] text-[#1b1b1b]"
+        />
+      ),
+      title: "Other Payments",
+      description: "Lorem dolor sit amet consectetur.",
+    },
+  ];
+
+  const menuComponents = menuConfig.map((config, index) => (
+    <MenuButton
+      key={index}
+      link={config.link}
+      iconImg={config.iconImg}
+      title={config.title}
+      description={config.description}
+    />
+  ));
+
   return (
     <div>
       <BackgroundImage />
       <main className="flex flex-col justify-center w-full mt-[20px]">
         <ul className="text-[40px] m-[25px] font-bold">
-          <Link href={"/queueing"} className="text-[#335F96]">
-            <li className="border-2 bg-white shadow-[-23px_23px_15px_-10px_rgba(0,0,0,0.3)] rounded-2xl flex items-center flex-col p-[34px] m-[30px]">
-              <div className="flex flex-row gap-5 ml-[-150px]">
-                <BsTicketDetailed
-                  size={150}
-                  className="mr-[45px] ml-[20px] text-[#1b1b1b]"
-                />
-                <div className="flex flex-col justify-center">
-                  Queue Number
-                  <p className="text-[20px] text-[#1b1b1b]">
-                    Lorem dolor sit amet
-                  </p>
-                </div>
-              </div>
-            </li>
-          </Link>
-          <Link href={"/pay-business"} className="text-[#335F96]">
-            <li className="border-2 bg-white shadow-[-23px_23px_15px_-10px_rgba(0,0,0,0.3)] rounded-2xl flex items-center flex-col p-[34px] m-[30px]">
-              <div className="flex flex-row gap-5 ml-[-150px]">
-                <GiPayMoney
-                  size={150}
-                  className="mr-[45px] ml-[20px] text-[#1b1b1b]"
-                />
-                <div className="flex flex-col justify-center">
-                  Pay Business
-                  <p className="text-[20px] text-[#1b1b1b]">
-                    Lorem dolor sit amet consectetur
-                  </p>
-                </div>
-              </div>
-            </li>
-          </Link>
-          <Link href={"/pay-property"} className="text-[#335F96]">
-            <li className="border-2 bg-white shadow-[-23px_23px_15px_-10px_rgba(0,0,0,0.3)] rounded-2xl flex items-center flex-col p-[34px] m-[30px]">
-              <div className="flex flex-row gap-5 ml-[-150px]">
-                <BsBuildings
-                  size={150}
-                  className="mr-[45px] ml-[20px] text-[#1b1b1b]"
-                />
-                <div className="flex flex-col justify-center">
-                  Pay Property
-                  <p className="text-[20px] text-[#1b1b1b]">
-                    Lorem dolor sit amet consectetur.
-                  </p>
-                </div>
-              </div>
-            </li>
-          </Link>
-          <Link href={"/other-payments"} className="text-[#335F96]">
-            <li className="border-2 bg-white shadow-[-23px_23px_15px_-10px_rgba(0,0,0,0.3)] rounded-2xl flex items-center flex-col p-[34px] m-[30px]">
-              <div className="flex flex-row gap-5 ml-[-150px]">
-                <MdOutlineOtherHouses
-                  size={150}
-                  className="mr-[45px] ml-[20px] text-[#1b1b1b]"
-                />
-                <div className="flex flex-col justify-center">
-                  Other Payments
-                  <p className="text-[20px] text-[#1b1b1b]">
-                    Lorem dolor sit amet consectetur.
-                  </p>
-                </div>
-              </div>
-            </li>
-          </Link>
+          {menuComponents[0]}
+          {menuComponents[1]}
+          {menuComponents[2]}
+          {menuComponents[3]}
         </ul>
       </main>
     </div>

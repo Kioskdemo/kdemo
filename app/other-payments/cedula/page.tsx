@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import BackgroundImage from "@/app/Component/BackgroundImage";
+
 import React from "react";
 
 const page: React.FC = () => {
