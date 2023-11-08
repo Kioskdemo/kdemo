@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
-import Link from "next/link";
 import React, { useEffect } from "react";
 import { BsTicketDetailed } from "react-icons/bs";
 import { GiPayMoney } from "react-icons/gi";
