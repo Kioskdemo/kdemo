@@ -59,7 +59,7 @@ const InputNumber: React.FC<InputNumberProps> = ({
     <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px]">
       <input
         ref={inputFieldRef}
-        value={inputValue}
+        value={inputValue}  
         name={name}
         placeholder={placeholder}
         className="text-center rounded-2xl border-2 border-gray-400"
@@ -74,7 +74,7 @@ const InputNumber: React.FC<InputNumberProps> = ({
           <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
           <div className="text-white">
             <NextCancelBtn
-              link={"/pay-business/pay-business-form"}
+              link={link}
               text={"Next"}
               bgcolor={"#005893"}
             />

@@ -17,17 +17,6 @@ export default function page() {
           link="/pay-property/pay-property-form"
           qrImg={"/example-qr.webp"}
         />
-
-        <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
-          <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
-          <div className="text-white">
-            <NextCancelBtn
-              link={"/pay-property/pay-property-form"}
-              text={"Next"}
-              bgcolor={"#335F96"}
-            />
-          </div>
-        </div>
       </main>
     </div>
   );
