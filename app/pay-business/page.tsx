@@ -2,7 +2,7 @@
 import React from "react";
 import LabelStepper from "../Component/LabelStepper";
 
-import InputNumber from "../Component/BINform";
+import InputNumber from "../Component/InputNumber";
 
 export default function Page() {
   return (
@@ -13,7 +13,6 @@ export default function Page() {
           name="InputValue"
           placeholder="Enter BIN"
           link="/pay-business/pay-business-form"
-          qrImg={"/Qr.png"}
         />
         <div className="text-[50px] relative flex justify-center items-center pt-[50px]">
           <h1>Or</h1>

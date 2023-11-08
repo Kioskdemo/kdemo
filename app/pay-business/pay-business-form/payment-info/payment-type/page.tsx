@@ -19,8 +19,19 @@ const Page: React.FC = () => {
         </div>
       </div>
       <div className="absolute bottom-[352px] w-full">
-        <div className="flex gap-24 text-[30px] right mb-10 m-[140px]">
-          <NextCancelBtn link={"/pay-business/pay-business-form/payment-info"} text={"Back"} bgcolor={"#fff"} />
+        <div className="flex gap-24 text-[30px] justify-center mb-10">
+          <NextCancelBtn
+            link={"/pay-business/pay-business-form/payment-info/"}
+            text={"Back"}
+            bgcolor={"#fff"}
+          />
+          <div className="text-white invisible">
+            <NextCancelBtn
+              link={"#"}
+              text={"Next"}
+              bgcolor={"#005893"}
+            />
+          </div>
         </div>
       </div>
     </>

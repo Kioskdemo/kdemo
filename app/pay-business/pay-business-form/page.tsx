@@ -18,7 +18,7 @@ export default function Page() {
       <div className="m-12">
         <BillingInformation />
       </div>
-      <div className="absolute bottom-[352px] w-full">
+      <div className="fixed bottom-[352px] w-full">
         <div className="flex gap-24 text-[30px] justify-center mb-10">
           <NextCancelBtn link={"/pay-business"} text={"Back"} bgcolor={"#fff"} />
           <div className="text-white">

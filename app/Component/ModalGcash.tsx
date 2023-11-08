@@ -21,7 +21,7 @@ const ModalGcash: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         >
           <IoCloseCircleOutline size={50} />
         </button>
-        <form className="flex flex-col items-center gap-5 bg-white p-8 rounded-2xl">
+        <form className="flex flex-col items-center gap-5 bg-white p-8 rounded-2xl z-10">
           <div className="">
             <Image
               src={"/gcash-qr.png"}

@@ -8,14 +8,12 @@ interface InputNumberProps {
   name: string;
   placeholder: string;
   link: string;
-  qrImg: string;
 }
 
 const InputNumber: React.FC<InputNumberProps> = ({
   name,
   placeholder,
   link,
-  qrImg,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const inputFieldRef = useRef<HTMLInputElement | null>(null);
@@ -69,7 +67,7 @@ const InputNumber: React.FC<InputNumberProps> = ({
         }}
       />
 
-      <div className="absolute bottom-8">
+      <div className="fixed bottom-0 m-8">
         <div className="flex gap-24 text-[30px] justify-center mb-10">
           <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
           <div className="text-white">

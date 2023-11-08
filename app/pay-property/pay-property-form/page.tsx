@@ -8,7 +8,6 @@ import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
 import CustomKeyboard from "@/app/Component/CustomKeyboard";
 import React, { useRef, useState } from "react";
-import BillingInformation from "@/app/Component/BillingInformation";
 
 export default function page() {
   const inputRefs = [
@@ -112,10 +111,10 @@ export default function page() {
       </div>
       <div className="absolute bottom-[352px] w-full">
         <div className="flex gap-24 text-[30px] justify-center mb-10">
-          <NextCancelBtn link={"/pay-business"} text={"Back"} bgcolor={"#fff"} />
+          <NextCancelBtn link={"/pay-property"} text={"Back"} bgcolor={"#fff"} />
           <div className="text-white">
             <NextCancelBtn
-              link={"/pay-business/pay-business-form/payment-info"}
+              link={"/pay-property/pay-property-form/payment-info"}
               text={"Next"}
                bgcolor={"#005893"}
             />

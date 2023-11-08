@@ -2,8 +2,7 @@
 
 import React from "react";
 import LabelStepper from "../Component/LabelStepper";
-import InputNumber from "../Component/BINform";
-import NextCancelBtn from "../Component/NextCancelBtn";
+import InputNumber from "../Component/InputNumber";
 
 export default function page() {
   return (
