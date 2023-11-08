@@ -22,12 +22,11 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ text }) => {
     const customStyle = `
         body {
           font-size: 10px;
-          font-weight: light;
         }
        .layout {
         display: flex;
-        justify-content: start;
-        align-items: start;
+        justify-content: center;
+        align-items: center;
        }
        .info {
         padding-top: 30px;
@@ -35,32 +34,15 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ text }) => {
         line-height: 3%;
        }
        .info h2 {
-        font-weight: light;
         text-align: center;
+        font-size: 30px;
        }
        .info p {
-        font-weight: bold;
+        font-weight: 500;
         text-align: center;
-        font-size: 16px;
+        font-size: 20px;
+        padding-top: 10px;
        }
-       .absolute-img img {
-          position: absolute;
-          content: "";
-          top: 0;
-          left: 30px;
-       }
-       .absolute-content {
-        position: absolute;
-        content: "";
-        top: -7px;
-        right: 45px;
-     }
-        img {
-          height: 120px;
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-        }
         @media print {
           .no-print {
             display: none;
@@ -93,20 +75,17 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ text }) => {
         </head>
         <body>
         <div class="layout">
-        <div class="absolute-img"> 
-        <img src="/Qr.png" alt="" />
-        </div>
-        <div class="absolute-content">
-      ${ReactDOMServer.renderToString(content)}
-        </div>
+      ${ReactDOMServer.renderToString(content)} 
         </div>
         </body>
         </html>
       `);
 
       printWindow.document.close();
+      printWindow.moveTo(10000, 10000);
       printWindow.print();
       printWindow.close();
+
       // printWindow.blur();
       // printWindow.opener.focus();
       // printWindow.close();
