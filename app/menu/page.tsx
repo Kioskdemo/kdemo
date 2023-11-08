@@ -14,7 +14,7 @@ export default function page() {
   const router = useRouter();
 
   useEffect(() => {
-    const timeLimit = 1000000;
+    const timeLimit = 10000;
 
     const timer = setTimeout(() => {
       router.push("/");
