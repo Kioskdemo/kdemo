@@ -8,7 +8,6 @@ import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
 import CustomKeyboard from "@/app/Functions/CustomKeyboard";
 import React, { useRef, useState } from "react";
-import BackgroundImage from "@/app/Component/BackgroundImage";
 
 export default function page() {
   const inputRefs = [
@@ -104,7 +103,6 @@ export default function page() {
 
   return (
     <div className="text-[25px]">
-      <BackgroundImage />
       <LabelStepper stepNum={1} title={"Enter Tax"} />
       <div className="flex justify-center">{inputComponents.slice(0, 2)}</div>
       {inputComponents[2]}

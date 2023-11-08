@@ -8,7 +8,6 @@ import InputText from "@/app/Component/InputText";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
 import CustomKeyboard from "@/app/Functions/CustomKeyboard";
-import BackgroundImage from "@/app/Component/BackgroundImage";
 
 export default function Page() {
   const inputRefs = [
@@ -91,7 +90,6 @@ export default function Page() {
 
   return (
     <div className=" text-[25px]">
-      <BackgroundImage />
       <LabelStepper stepNum={1} title={"Enter Bin"} />
       <div className="flex justify-center">{inputComponents.slice(0, 2)}</div>
       {inputComponents[2]}
@@ -99,6 +97,7 @@ export default function Page() {
       <div className="pt-[200px]">
         <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
+
       <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
         <NextCancelBtn link="/pay-business" text="Back" bgcolor="#fff" />
         <div className="text-white">

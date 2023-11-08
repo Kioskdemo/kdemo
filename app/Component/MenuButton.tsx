@@ -15,16 +15,11 @@ const MenuButton: React.FC<MenuButtonProps> = ({
   description,
 }) => {
   return (
-    <div className="mt-10 capitalize">
+    <div className="capitalize">
       <Link href={link} className="text-[#335F96]">
-        <div className="bg-white rounded-3xl w-full h-52 shadow-[-25px_25px_15px_-10px_rgba(0,0,0,0.4)] flex items-center  border border-gray-400">
-          <div className="ml-14">{iconImg}</div>
-          <div className="flex justify-center items-center">
-            <div className="grid-cols-2 m-12 font-serif">
-              <div className="text-[40px] font-bold">{title}</div>
-              <div className="text-xl text-[#1b1b1b]">{description}</div>
-            </div>
-          </div>
+        <div className="w-[270px] h-[270px] bg-white rounded-[25%] text-[#335F96] shadow-[-20px_22px_15px_-10px_rgba(0,0,0,0.3)] border border-[#335F96] flex flex-col items-center justify-center gap-5">
+          <div className="">{iconImg}</div>
+          <h1 className="text-[25px] font-bold">{title}</h1>
         </div>
       </Link>
     </div>

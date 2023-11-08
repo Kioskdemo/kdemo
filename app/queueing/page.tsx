@@ -2,43 +2,35 @@
 "use client";
 
 import React, { useRef } from "react";
-import { BsFillPersonFill, BsWater, BsFillBuildingFill } from "react-icons/bs";
-import { AiFillHome, AiFillStop, AiFillCar } from "react-icons/ai";
-import { GiHealthNormal } from "react-icons/gi";
-import { IoTicket } from "react-icons/io5";
-import { FaHelmetSafety } from "react-icons/fa6";
+
 import CategoryQue from "../Component/CategoryQue";
-import BackButton from "../Component/BackButton";
-import BackgroundImage from "../Component/BackgroundImage";
+
+import NextCancelBtn from "../Component/NextCancelBtn";
 
 const LandingPage = () => {
   const componentRef = useRef(null);
 
   const queueConfig = [
-    { iconImg: <BsFillPersonFill size={50} />, text: "Cedula" },
-    { iconImg: <BsWater size={50} />, text: "Water" },
-    { iconImg: <BsFillBuildingFill size={50} />, text: "Construction Permit" },
-    { iconImg: <AiFillHome size={50} />, text: "Real Property" },
-    { iconImg: <AiFillStop size={50} />, text: "Ordinance Violations" },
-    { iconImg: <AiFillCar size={50} />, text: "Vehicle Registration" },
-    { iconImg: <GiHealthNormal size={50} />, text: "Health Permit" },
-    { iconImg: <IoTicket size={50} />, text: "Queue" },
-    { iconImg: <FaHelmetSafety size={50} />, text: "Work Permit" },
+    { text: "Cedula" },
+    { text: "Water" },
+    { text: "Construction Permit" },
+
+    { text: "Ordinance Violations" },
+    { text: "Vehicle Registration" },
+    { text: "Health Permit" },
+
+    { text: "Work Permit" },
   ];
 
   const queueComponents = queueConfig.map((config, index) => (
-    <CategoryQue key={index} iconImg={config.iconImg} text={config.text} />
+    <CategoryQue key={index} text={config.text} />
   ));
 
   return (
-    <>
+    <div className="mt-[100px]">
       {" "}
-      <BackgroundImage />
       <img className="hidden" src="/Qr.png" alt="" />
-      <div className="">
-        <BackButton text="Back" link={"/menu"} />
-      </div>
-      <div className="text-[45px] font-bold px-28 pt-5 relative grid grid-rows-3 grid-flow-col gap-5">
+      <div className="text-[45px] px-28 pt-5 relative grid grid-cols-1 grid-flow-row gap-10">
         {queueComponents[0]}
         {queueComponents[1]}
         {queueComponents[2]}
@@ -47,9 +39,11 @@ const LandingPage = () => {
         {queueComponents[5]}
         {queueComponents[6]}
         {queueComponents[7]}
-        {queueComponents[8]}
       </div>
-    </>
+      <div className="flex gap-24 text-[30px] pt-10 absolute bottom-8 left-[139px]">
+        <NextCancelBtn link="/menu" text="Back" bgcolor="#fff" />
+      </div>
+    </div>
   );
 };
 

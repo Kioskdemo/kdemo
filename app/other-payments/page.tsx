@@ -3,6 +3,7 @@ import CategoryOtherPayments from "../Component/CategoryOtherPayments";
 import BackButton from "../Component/BackButton";
 import NextBackButton from "../Component/Next&BackButton";
 import BackgroundImage from "../Component/BackgroundImage";
+import NextCancelBtn from "../Component/NextCancelBtn";
 
 export default function page() {
   const paymentTypesConfig = [
@@ -18,21 +19,23 @@ export default function page() {
   ));
 
   return (
-    <div>
-      <BackgroundImage />
+    <div className="mt-[100px]">
       <main className=" flex flex-col justify-center w-full">
-        <BackButton text={"Back"} link={"/menu"} />
         <div className="flex flex-col justify-center items-center gap-10 text-[35px]">
           {paymentTypesComponents[0]}
           {paymentTypesComponents[1]}
           {paymentTypesComponents[2]}
           {paymentTypesComponents[3]}
           {paymentTypesComponents[4]}
-          <div className="absolute bottom-8">
-            <NextBackButton
-              text={"Next"}
-              link={"/other-payments/other-payments-2"}
-            />
+          <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
+            <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
+            <div className="text-white">
+              <NextCancelBtn
+                link={"/other-payments/other-payments-2"}
+                text={"Next"}
+                bgcolor={"#005893"}
+              />
+            </div>
           </div>
         </div>
       </main>

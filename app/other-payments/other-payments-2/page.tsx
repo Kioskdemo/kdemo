@@ -2,6 +2,7 @@ import BackButton from "@/app/Component/BackButton";
 import BackgroundImage from "@/app/Component/BackgroundImage";
 import CategoryOtherPayments from "@/app/Component/CategoryOtherPayments";
 import NextBackButton from "@/app/Component/Next&BackButton";
+import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import React from "react";
 
 export default function page() {
@@ -17,17 +18,15 @@ export default function page() {
   ));
 
   return (
-    <div>
-      <BackgroundImage />
+    <div className="mt-[100px]">
       <main className="flex flex-col justify-center w-full">
-        <BackButton text={"Back"} link={"/menu"} />
         <div className="flex flex-col justify-center items-center gap-10 text-[35px]">
           {paymentTypesComponents[0]}
           {paymentTypesComponents[1]}
           {paymentTypesComponents[2]}
           {paymentTypesComponents[3]}
-          <div className="absolute bottom-8">
-            <NextBackButton text={"Prev"} link={"/other-payments"} />
+          <div className="flex gap-24 text-[30px] pt-10 absolute bottom-8 left-[139px]">
+            <NextCancelBtn link="/other-payments" text="Back" bgcolor="#fff" />
           </div>
         </div>
       </main>
