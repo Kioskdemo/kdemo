@@ -15,7 +15,7 @@ const NextBackButton: React.FC<NextBackButtonProps> = ({ text, link }) => {
         className="text-[40px] flex items-center gap-5 p-5 m-[20px] w-[200px]"
         href={link}
       >
-        <BsArrowLeftRight size={60} className="text-[#335F96]" />
+        <BsArrowLeftRight size={50} className="text-[#335F96]" />
         <p className="font-semibold">{text}</p>
       </Link>
     </div>

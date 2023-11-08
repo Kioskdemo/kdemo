@@ -1,8 +1,9 @@
+import BackButton from "@/app/Component/BackButton";
+import BackgroundImage from "@/app/Component/BackgroundImage";
 import CategoryOtherPayments from "@/app/Component/CategoryOtherPayments";
 import NextBackButton from "@/app/Component/Next&BackButton";
-import Link from "next/link";
+import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import React from "react";
-import { BsArrowLeftRight } from "react-icons/bs";
 
 export default function page() {
   const paymentTypesConfig = [
@@ -17,14 +18,16 @@ export default function page() {
   ));
 
   return (
-    <div>
-      <main className="bgothers-image flex flex-col justify-center w-full mt-[50px] pt-[50px]">
-        <div className="flex flex-col justify-center items-center gap-20 text-[35px]">
+    <div className="mt-[100px]">
+      <main className="flex flex-col justify-center w-full">
+        <div className="flex flex-col justify-center items-center gap-10 text-[35px]">
           {paymentTypesComponents[0]}
           {paymentTypesComponents[1]}
           {paymentTypesComponents[2]}
           {paymentTypesComponents[3]}
-          <NextBackButton text={"Back"} link={"/other-payments"} />
+          <div className="flex gap-24 text-[30px] pt-10 absolute bottom-8 left-[139px]">
+            <NextCancelBtn link="/other-payments" text="Back" bgcolor="#fff" />
+          </div>
         </div>
       </main>
     </div>

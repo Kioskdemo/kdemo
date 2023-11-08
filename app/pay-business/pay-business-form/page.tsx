@@ -4,64 +4,11 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import InputText from "@/app/Component/InputText";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
-import CustomKeyboard from "@/app/Component/CustomKeyboard";
 import BillingInformation from "@/app/Component/BillingInformation";
 
 export default function Page() {
-  const inputRefs = [
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-  ];
-
-  const [inputValues, setInputValues] = useState(["", "", "", "", "", ""]);
-  const activeInputRef = useRef(null);
-
-  const setCursorPosition = (position: number) => {
-    const activeInput = activeInputRef.current as HTMLInputElement | null;
-    if (activeInput) {
-      setTimeout(() => {
-        activeInput.selectionStart = position;
-        activeInput.selectionEnd = position;
-        activeInput.focus();
-      }, 0);
-    }
-  };
-
-  const handleKeyClick = (key: string) => {
-    const activeInput = activeInputRef.current as HTMLInputElement | null;
-    if (activeInput) {
-      const cursorPosition = activeInput?.selectionStart || 0;
-      const inputIndex = inputRefs.findIndex(
-        (ref) => ref.current === activeInput
-      );
-
-      if (key === "CLEAR") {
-        inputValues[inputIndex] = "";
-      } else if (key === "~") {
-        if (cursorPosition > 0) {
-          inputValues[inputIndex] =
-            inputValues[inputIndex].slice(0, cursorPosition - 1) +
-            inputValues[inputIndex].slice(cursorPosition);
-          setCursorPosition(cursorPosition - 1);
-        }
-      } else {
-        inputValues[inputIndex] =
-          inputValues[inputIndex].slice(0, cursorPosition) +
-          key +
-          inputValues[inputIndex].slice(cursorPosition);
-        setCursorPosition(cursorPosition + 1);
-      }
-
-      setInputValues([...inputValues]);
-    }
-  };
 
   return (
     <>
@@ -82,7 +29,6 @@ export default function Page() {
             />
           </div>
         </div>
-        <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
     </>
   );

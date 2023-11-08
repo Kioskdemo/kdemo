@@ -76,8 +76,8 @@ export default function page() {
   const inputConfig = [
     { label: "ARP/TD No.", placeholder: "Type Here", size: 15 },
     { label: "Property ID No.", placeholder: "Type Here", size: 15 },
-    { label: "Owner", placeholder: "Type Here", size: 38 },
-    { label: "Address", placeholder: "Type Here", size: 38 },
+    { label: "Owner", placeholder: "Type Here", size: 39 },
+    { label: "Address", placeholder: "Type Here", size: 39 },
     { label: "OCT/TCT/CLOA No.", placeholder: "Type Here", size: 15 },
     { label: "Lot No.", placeholder: "Type Here", size: 15 },
     { label: "Municipal Assessor", placeholder: "Type Here", size: 15 },
@@ -102,7 +102,7 @@ export default function page() {
   ));
 
   return (
-    <div className="bgtax-image text-[25px]">
+    <div className="text-[25px]">
       <LabelStepper stepNum={1} title={"Enter Tax"} />
       <div className="flex justify-center">{inputComponents.slice(0, 2)}</div>
       {inputComponents[2]}

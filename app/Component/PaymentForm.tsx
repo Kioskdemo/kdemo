@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useRef, useState } from "react";
 import InputText from "./InputText";
 import CustomKeyboard from "./CustomKeyboard";
@@ -8,7 +8,6 @@ interface PaymentFormProps {
 }
 
 const PaymentForm: React.FC<PaymentFormProps> = ({ placeholder }) => {
-  
   const inputRefs = [
     useRef(null),
     useRef(null),
@@ -22,7 +21,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ placeholder }) => {
   const activeInputRef = useRef(null);
 
   const setCursorPosition = (position: number) => {
-    const activeInput = activeInputRef.current as HTMLInputElement | null;;
+    const activeInput = activeInputRef.current as HTMLInputElement | null;
     if (activeInput) {
       setTimeout(() => {
         activeInput.selectionStart = position;
@@ -36,7 +35,9 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ placeholder }) => {
     const activeInput = activeInputRef.current as HTMLInputElement | null;
     if (activeInput) {
       const cursorPosition = activeInput?.selectionStart || 0;
-      const inputIndex = inputRefs.findIndex((ref) => ref.current === activeInput);
+      const inputIndex = inputRefs.findIndex(
+        (ref) => ref.current === activeInput
+      );
 
       if (key === "CLEAR") {
         inputValues[inputIndex] = "";
@@ -60,10 +61,10 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ placeholder }) => {
   };
 
   const inputConfig = [
-    { label: "Paid by", placeholder: "Type Here", size: 50 },
-    { label: "Payer Address", placeholder: "Type Here", size: 50 },
-    { label: "Particulars", placeholder: "Type Here", size: 50 },
-    { label: "Amount", placeholder: "Type Here", size: 50 },
+    { label: "Paid by", placeholder: "Type Here", size: 39 },
+    { label: "Payer Address", placeholder: "Type Here", size: 39 },
+    { label: "Particulars", placeholder: "Type Here", size: 39 },
+    { label: "Amount", placeholder: "Type Here", size: 39 },
   ];
 
   const inputComponents = inputConfig.map((config, index) => (
@@ -74,15 +75,15 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ placeholder }) => {
       size={config.size}
       inputRef={inputRefs[index]}
       value={inputValues[index]}
-      name="" 
+      name=""
       onclick={(e) => {
         activeInputRef.current = inputRefs[index].current;
         const cursorPosition = e.currentTarget.selectionStart || 0;
         setCursorPosition(cursorPosition);
-      }}    
+      }}
     />
   ));
-  
+
   return (
     <div className="text-[25px]">
       <div className="justify-center">

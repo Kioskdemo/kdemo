@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <div className="">
       <LabelStepper stepNum={0} title={"Enter Bin"} />
-      <div className="flex flex-col justify-center w-full bgpaybusiness-image pt-[40px]">
+      <div className="flex flex-col justify-center w-full  pt-[40px]">
         <InputNumber
           name="InputValue"
           placeholder="Enter BIN"
