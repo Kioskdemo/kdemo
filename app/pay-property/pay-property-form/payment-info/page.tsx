@@ -11,7 +11,7 @@ export default function page() {
       <PaymentForm placeholder={"Type Here"} />
       <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
         <NextCancelBtn
-          link={"/pay-property/pay-property-form"}
+          link={"/pay-business/pay-business-form"}
           text={"Back"}
           bgcolor={"#fff"}
         />

@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import InputText from "./InputText";
 import CustomKeyboard from "./CustomKeyboard";
+import NextCancelBtn from "./NextCancelBtn";
 
 interface PaymentFormProps {
   placeholder: string;
@@ -92,7 +93,18 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ placeholder }) => {
         {inputComponents[2]}
         {inputComponents[3]}
       </div>
-      <div className="m-14">
+      <div className="absolute bottom-8 w-full">
+        <div className="flex gap-24 text-[30px] justify-center mb-10">
+          <NextCancelBtn link={"/pay-business/pay-business-form"} text={"Back"} bgcolor={"#fff"} />
+          <div className="text-white">
+            <NextCancelBtn
+            
+              link={"/pay-business/pay-business-form/payment-info/payment-type"}
+              text={"Next"}
+              bgcolor={"#005893"}
+            />
+          </div>
+        </div>
         <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
     </div>
