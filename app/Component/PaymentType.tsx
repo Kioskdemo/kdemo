@@ -39,7 +39,7 @@ const Gcash = () => {
             height={100}
             quality={100}
           />
-          <h1>Gcash payment</h1>
+          <h1 className="uppercase">Pay Here</h1>
           <h1 className="bg-black w-full text-white uppercase rounded-b-2xl">
             Gcash
           </h1>
@@ -64,7 +64,7 @@ const Gcash = () => {
             height={100}
             quality={100}
           />
-          <h1>Cashier payment</h1>
+          <h1 className="uppercase">Pay counter</h1>
           <h1 className="bg-black w-full text-white uppercase rounded-b-2xl">
             Cashier
           </h1>
