@@ -1,34 +1,19 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import styles from "../Modal.module.css";
 import Image from "next/image";
-
 import { TiArrowDownThick } from "react-icons/ti";
-import Link from "next/link";
-import ReactDOMServer from "react-dom/server";
 import { ComponentToPrint } from "./PrintableContent";
+import ReactDOMServer from "react-dom/server";
+import Link from "next/link";
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  heading: string;
-  text: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, heading, text }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
-
-  // const router = useRouter();
-
-  // useEffect(() => {
-  //   const timeLimit = 2000;
-
-  //   const timer = setTimeout(() => {
-  //     router.push("/menu");
-  //   }, timeLimit);
-
-  //   return () => clearTimeout(timer);
-  // });
 
   const handlePopupPrint = () => {
     const customStyle = `
@@ -88,7 +73,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, heading, text }) => {
         </head>
         <body>
         <div class="layout">
-    
+        <img src="/Qr.png" alt="Qr Code" width="100" height="100">
       ${ReactDOMServer.renderToString(content)} 
         </div>
         </body>
@@ -116,10 +101,17 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, heading, text }) => {
         >
           <IoCloseCircleOutline size={50} />
         </button> */}
-
         <form className="flex flex-col justify-center items-center gap-2 bg-white rounded-2xl p-5 ">
-          <h1 className="text-[35px] uppercase font-semibold">{heading}</h1>
-          <p className="text-[70px] font-bold pb-[70px]">{text}</p>
+          <Image
+            src={"/Qr.png"}
+            alt={""}
+            height={100}
+            width={150}
+            quality={100}
+            className="pb-[70px]"
+          />
+          <h1 className="text-[35px] uppercase font-semibold">Queue No.</h1>
+          <p className="text-[70px] font-bold pb-[70px]">001</p>
 
           <Image
             src={"/print.png"}

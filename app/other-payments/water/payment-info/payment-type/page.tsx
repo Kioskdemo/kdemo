@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import { MdKeyboardBackspace } from "react-icons/md";
-import Modal from "@/app/Component/Modal";
+import Modal from "@/app/Component/ModalCashier";
 import ModalGcash from "@/app/Component/ModalGcash";
 import { BsInputCursor } from "react-icons/bs";
 import PaymentType from "@/app/Component/PaymentType";

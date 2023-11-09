@@ -4,10 +4,9 @@ import InputText from "./InputText";
 import CustomKeyboard from "./CustomKeyboard";
 import NextCancelBtn from "./NextCancelBtn";
 
-interface PaymentFormProps {
-}
+interface PaymentFormProps {}
 
-const PaymentForm: React.FC<PaymentFormProps> = ({  }) => {
+const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
   const inputRefs = [
     useRef(null),
     useRef(null),
@@ -63,8 +62,13 @@ const PaymentForm: React.FC<PaymentFormProps> = ({  }) => {
   const inputConfig = [
     { label: "Paid by", placeholder: "Type Here", size: 39 },
     { label: "Payer Address", placeholder: "Type Here", size: 39 },
-    { label: "Particulars", placeholder: "Type Here", size: 39 },
-    { label: "Amount", placeholder: "Type Here", size: 39 },
+    {
+      label: "Particulars",
+      placeholder: "cedula",
+      size: 39,
+      disabled: true,
+    },
+    { label: "Amount", placeholder: "150", size: 39, disabled: true },
   ];
 
   const inputComponents = inputConfig.map((config, index) => (
@@ -81,6 +85,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({  }) => {
         const cursorPosition = e.currentTarget.selectionStart || 0;
         setCursorPosition(cursorPosition);
       }}
+      disabled={config.disabled}
     />
   ));
 
