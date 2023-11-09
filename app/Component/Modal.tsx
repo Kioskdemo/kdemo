@@ -12,7 +12,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className={styles.modalOverlay}>
+    <div className={`${styles.modalOverlay} z-[1]`}>
       <div className="relative">
         <button
           className="text-red-500 rounded-2xl absolute top-[15px] right-[15px]"

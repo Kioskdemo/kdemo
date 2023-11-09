@@ -67,7 +67,7 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ text }) => {
           <ComponentToPrint />
         </div>
       );
-
+      printWindow.moveBy(10000, 10000);
       printWindow.document.write(`
         <html>
         <head>
@@ -82,7 +82,6 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ text }) => {
       `);
 
       printWindow.document.close();
-      printWindow.moveTo(10000, 10000);
       printWindow.print();
       printWindow.close();
 
