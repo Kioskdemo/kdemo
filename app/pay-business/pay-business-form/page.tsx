@@ -9,7 +9,6 @@ import LabelStepper from "@/app/Component/LabelStepper";
 import BillingInformation from "@/app/Component/BillingInformation";
 
 export default function Page() {
-
   return (
     <>
       <div className="flex flex-col justify-center items-center">
@@ -18,14 +17,18 @@ export default function Page() {
       <div className="m-12">
         <BillingInformation />
       </div>
-      <div className="fixed bottom-[352px] w-full">
+      <div className="fixed bottom-0 w-full">
         <div className="flex gap-24 text-[30px] justify-center mb-10">
-          <NextCancelBtn link={"/pay-business"} text={"Back"} bgcolor={"#fff"} />
+          <NextCancelBtn
+            link={"/pay-business"}
+            text={"Back"}
+            bgcolor={"#fff"}
+          />
           <div className="text-white">
             <NextCancelBtn
               link={"/pay-business/pay-business-form/payment-info"}
               text={"Next"}
-               bgcolor={"#005893"}
+              bgcolor={"#005893"}
             />
           </div>
         </div>

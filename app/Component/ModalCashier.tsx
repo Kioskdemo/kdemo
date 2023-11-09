@@ -6,6 +6,7 @@ import { TiArrowDownThick } from "react-icons/ti";
 import { ComponentToPrint } from "./PrintableContent";
 import ReactDOMServer from "react-dom/server";
 import Link from "next/link";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 interface ModalProps {
   isOpen: boolean;
@@ -95,12 +96,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   return (
     <div className={`${styles.modalOverlay} z-[1]`}>
       <div className="relative w-[80%]">
-        {/* <button
+        <button
           className="text-red-500 rounded-2xl absolute top-[15px] right-[15px]"
           onClick={onClose}
         >
           <IoCloseCircleOutline size={50} />
-        </button> */}
+        </button>
         <form className="flex flex-col justify-center items-center gap-2 bg-white rounded-2xl p-5 ">
           <Image
             src={"/Qr.png"}

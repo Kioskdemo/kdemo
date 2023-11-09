@@ -47,6 +47,20 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
             inputValues[inputIndex].slice(cursorPosition);
           setCursorPosition(cursorPosition - 1);
         }
+      } else if (key === "SPACEBAR") {
+        if (cursorPosition > 0) {
+          inputValues[inputIndex] =
+            inputValues[inputIndex].slice(0, cursorPosition) +
+            " " +
+            inputValues[inputIndex].slice(cursorPosition);
+          setCursorPosition(cursorPosition + 1);
+        } else {
+          inputValues[inputIndex] =
+            inputValues[inputIndex].slice(0, cursorPosition) +
+            key +
+            inputValues[inputIndex].slice(cursorPosition);
+          setCursorPosition(cursorPosition + 1);
+        }
       } else {
         inputValues[inputIndex] =
           inputValues[inputIndex].slice(0, cursorPosition) +
@@ -97,7 +111,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
         {inputComponents[2]}
         {inputComponents[3]}
       </div>
-      <div className="absolute bottom-8 w-full">
+      <div className="absolute bottom-40 w-full">
         <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
     </div>

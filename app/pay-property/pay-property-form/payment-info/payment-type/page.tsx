@@ -20,7 +20,7 @@ const Page: React.FC = () => {
         <div className="flex gap-20 pt-5">
           <PaymentType />
         </div>
-        <div className="absolute bottom-[352px] w-full">
+        <div className="absolute bottom-0 w-full">
           <div className="flex gap-24 text-[30px] justify-center mb-10">
             <NextCancelBtn
               link={"/pay-property/pay-property-form/payment-info"}

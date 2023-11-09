@@ -7,6 +7,7 @@ import { TiArrowDownThick } from "react-icons/ti";
 import Link from "next/link";
 import ReactDOMServer from "react-dom/server";
 import { ComponentToPrint } from "./PrintableContent";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 interface ModalProps {
   isOpen: boolean;

@@ -23,7 +23,7 @@ const Page: React.FC = () => {
           <PaymentType />
         </div>
       </div>
-      <div className="absolute bottom-[352px] w-full">
+      <div className="absolute bottom-0 w-full">
         <div className="flex gap-24 text-[30px] justify-center mb-10">
           <NextCancelBtn
             link={"/pay-business/pay-business-form/payment-info/"}
