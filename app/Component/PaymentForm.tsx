@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import InputText from "./InputText";
-import KeyboardAlpha from "./KeyboardAlpha";
-import KeyboardSymbol from "./KeyboardSymbol";
+import KeyboardAlpha from "../functions/KeyboardAlpha";
+import KeyboardSymbol from "../functions/KeyboardSymbol";
 
 interface PaymentFormProps {}
 
