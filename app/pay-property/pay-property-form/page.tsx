@@ -6,7 +6,6 @@
 import InputText from "@/app/Component/InputText";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
-import CustomKeyboard from "@/app/Component/CustomKeyboard";
 import React, { useRef, useState } from "react";
 import BillingInformation from "@/app/Component/BillingInformation";
 
@@ -110,6 +109,7 @@ export default function page() {
       <div className="m-12">
         <BillingInformation />
       </div>
+
       <div className="absolute bottom-0 w-full">
         <div className="flex gap-24 text-[30px] justify-center mb-10">
           <NextCancelBtn
