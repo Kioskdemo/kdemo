@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import ModalGcash from "./ModalGcash";
-import Modal from "./Modal";
+import Modal from "./ModalCashier";
 
 const Gcash = () => {
   const [isModalOpenGcash, setIsModalOpenGcash] = useState(false);
@@ -26,40 +26,51 @@ const Gcash = () => {
 
   return (
     <div className="flex gap-20">
-      <div>
+      <div className="relative">
         {/* MODAL GCASH */}
         <button
           onClick={openModalGcash}
-          className="bg-white w-[250px] h-[250px] flex items-center text-center justify-center rounded-2xl shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)]"
+          className="bg-white w-[300px] h-[420px] flex items-center text-center justify-between rounded-2xl shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)] flex-col border border-black"
         >
           <Image
-            src="/globe-gcash.png"
+            src="/gcash.png"
             alt="Cebu Logo"
-            width={200}
-            height={200}
+            width={250}
+            height={100}
             quality={100}
           />
+          <h1 className="uppercase">Pay Here</h1>
+          <h1 className="bg-black w-full text-white uppercase rounded-b-2xl">
+            Gcash
+          </h1>
+          <div className="bg-black w-[250px] h-[2px] absolute top-[220px]"></div>
         </button>
-        <h1 className="text-center">Gcash</h1>
+
         <ModalGcash isOpen={isModalOpenGcash} onClose={closeModalGcash} />
       </div>
 
-      <div>
+      <div className="relative">
         {/* MODAL CASHIER */}
         <button
-          onClick={openModal}
-          className="bg-white w-[250px] h-[250px] flex items-center text-center justify-center rounded-2xl shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)]"
+          onClick={() => {
+            openModal();
+          }}
+          className="bg-white w-[300px] h-[420px] flex items-center text-center justify-between rounded-2xl shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)] flex-col border border-black"
         >
           <Image
-            src="/cashier-logo.png"
+            src="/cashier.png"
             alt="Cebu Logo"
-            width={200}
-            height={200}
+            width={250}
+            height={100}
             quality={100}
           />
+          <h1 className="uppercase">Pay counter</h1>
+          <h1 className="bg-black w-full text-white uppercase rounded-b-2xl">
+            Cashier
+          </h1>
+          <div className="bg-black w-[250px] h-[2px] absolute top-[220px]"></div>
         </button>
         <Modal isOpen={isModalOpen} onClose={closeModal} />
-        <h1 className="text-center">Cashier</h1>
       </div>
     </div>
   );

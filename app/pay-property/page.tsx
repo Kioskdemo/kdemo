@@ -14,7 +14,6 @@ export default function page() {
           name="name"
           placeholder="Enter Tax No."
           link="/pay-property/pay-property-form"
-          qrImg={"/example-qr.webp"}
         />
       </main>
     </div>

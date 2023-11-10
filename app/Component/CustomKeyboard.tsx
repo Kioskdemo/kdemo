@@ -296,7 +296,7 @@ const CustomKeyboard = ({
             ))}
           </div>
           {/* Z-M, Clear */}
-          <div className="ml-[80px]">
+          <div className="">
             {["Z"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
@@ -360,15 +360,35 @@ const CustomKeyboard = ({
                 {key}
               </button>
             ))}
-            {["CLEAR"].map((key) => (
+            {["-"].map((key) => (
               <button
-                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[120px] h-[70px] m-[5px]"
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
                 onClick={() => handleKeyClick(key)}
               >
                 {key}
               </button>
             ))}
+            {["CLEAR"].map((key) => (
+              <button
+                className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[150px] h-[70px] m-[5px]"
+                key={key}
+                onClick={() => handleKeyClick(key)}
+              >
+                {key}
+              </button>
+            ))}
+            <div className="flex items-center justify-center">
+              {["SPACEBAR"].map((key) => (
+                <button
+                  className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[500px] h-[70px] m-[5px] "
+                  key={key}
+                  onClick={() => handleKeyClick(key)}
+                >
+                  {key}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ interface BusinessFormProps {
   placeholder: string;
   label: string;
   size: number;
+  disabled?: boolean;
   onclick: React.MouseEventHandler<HTMLInputElement>;
 }
 
@@ -17,6 +18,7 @@ const InputText: React.FC<BusinessFormProps> = ({
   inputRef,
   value,
   onclick,
+  disabled,
 }) => {
   return (
     <div className="flex justify-center gap-5 text-[30px] p-2">
@@ -30,6 +32,7 @@ const InputText: React.FC<BusinessFormProps> = ({
           placeholder={placeholder}
           className="h-[70px] rounded-2xl bg-gray-100 p-5 shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)]"
           onClick={onclick}
+          disabled={disabled}
         />
       </div>
     </div>

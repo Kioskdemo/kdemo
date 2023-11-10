@@ -21,20 +21,6 @@ const InputNumber: React.FC<InputNumberProps> = ({
   const handleKeyClick = (key: string) => {
     if (key === "CLEAR") {
       setInputValue("");
-    } else if (key === "SPACEBAR") {
-      const cursorPosition = inputFieldRef.current?.selectionStart || 0;
-      if (cursorPosition > 0 ) {
-        const updatedValue =
-        inputValue.slice(0, cursorPosition) + ' ' + inputValue.slice(cursorPosition);
-        setInputValue(updatedValue);
-        setCursorPosition(cursorPosition + 1);
-      } else {
-        const cursorPosition = inputFieldRef.current?.selectionStart || 0;
-        const updatedValue =
-        inputValue.slice(0, cursorPosition) + key + inputValue.slice(cursorPosition);
-        setInputValue(updatedValue);
-        setCursorPosition(cursorPosition + 1);
-      }
     } else if (key === "~") {
       const cursorPosition = inputFieldRef.current?.selectionStart || 0;
       if (cursorPosition > 0) {
@@ -71,7 +57,7 @@ const InputNumber: React.FC<InputNumberProps> = ({
     <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px]">
       <input
         ref={inputFieldRef}
-        value={inputValue}  
+        value={inputValue}
         name={name}
         placeholder={placeholder}
         className="text-center rounded-2xl border-2 border-gray-400"
@@ -81,18 +67,14 @@ const InputNumber: React.FC<InputNumberProps> = ({
         }}
       />
 
-      <div className="fixed bottom-0 m-8">
-        <div className="flex gap-24 text-[30px] justify-center mb-10">
+      <div className="fixed bottom-0">
+        <CustomKeyboard handleKeyClick={handleKeyClick} />
+        <div className="flex gap-24 text-[30px] justify-center my-10">
           <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
           <div className="text-white">
-            <NextCancelBtn
-              link={link}
-              text={"Next"}
-              bgcolor={"#005893"}
-            />
+            <NextCancelBtn link={link} text={"Next"} bgcolor={"#005893"} />
           </div>
         </div>
-        <CustomKeyboard handleKeyClick={handleKeyClick} />
       </div>
     </div>
   );
