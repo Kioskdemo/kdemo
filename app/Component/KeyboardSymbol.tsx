@@ -105,7 +105,7 @@ const KeyboardSymbol = ({
           ))}
           {/* Q-P */}
           <div className="flex">
-            {[""].map((key) => (
+            {["("].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -114,7 +114,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {[")"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -123,7 +123,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["*"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -132,7 +132,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["'"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -141,7 +141,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {[":"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -150,7 +150,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {[";"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -159,7 +159,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["!"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -168,7 +168,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["?"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -177,7 +177,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["~"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -186,7 +186,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["`"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -198,7 +198,7 @@ const KeyboardSymbol = ({
           </div>
           {/* A-P */}
           <div className="flex">
-            {[""].map((key) => (
+            {["{"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -207,7 +207,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["}"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -216,7 +216,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["["].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -225,7 +225,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["]"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -234,7 +234,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["^"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -243,7 +243,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["="].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -252,7 +252,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["+"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -261,7 +261,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["<"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -270,7 +270,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {[">"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -306,7 +306,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {[","].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -315,7 +315,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["."].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
@@ -324,7 +324,7 @@ const KeyboardSymbol = ({
                 {key}
               </button>
             ))}
-            {[""].map((key) => (
+            {["|"].map((key) => (
               <button
                 className="bg-white border border-gray-400 rounded-lg font-bold text-2xl shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 key={key}
