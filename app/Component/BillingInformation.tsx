@@ -17,7 +17,7 @@ const BillingInformation: React.FC<BillingInformationProps> = ({}) => {
     <div className="text-[25px]">
       <h1 className="text-[35px] text-green-500 pb-[50px]">
         Billing Information
-      </h1>{" "}
+      </h1>
       <div className="flex flex-col gap-10">
         <div className=" flex justify-start gap-36">
           <div className="ml-10 font-bold flex flex-col gap-3">
