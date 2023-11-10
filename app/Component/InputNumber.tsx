@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import NextCancelBtn from "./NextCancelBtn";
-import KeyboardAlpha from "../functions/KeyboardAlpha";
-import KeyboardSymbol from "../functions/KeyboardSymbol";
+import KeyboardAlpha from "./KeyboardAlpha";
+import KeyboardSymbol from "./KeyboardSymbol";
 import { handleKeyClick, setCursorPosition } from "../functions/KeyboardUtils";
 
 interface InputNumberProps {
