@@ -10,7 +10,7 @@ import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import useTimer from "@/app/functions/Timer";
 
 const Page: React.FC = () => {
-  const timeLimit = 100000;
+  const timeLimit = 120000;
   useTimer(timeLimit);
 
   return (

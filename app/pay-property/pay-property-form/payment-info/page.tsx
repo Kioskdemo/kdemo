@@ -7,7 +7,7 @@ import React from "react";
 import useTimer from "@/app/functions/Timer";
 
 export default function page() {
-  const timeLimit = 100000;
+  const timeLimit = 120000;
   useTimer(timeLimit);
   return (
     <div className=" text-[25px]">

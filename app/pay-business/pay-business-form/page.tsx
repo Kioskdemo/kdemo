@@ -10,7 +10,7 @@ import BillingInformation from "@/app/Component/BillingInformation";
 import useTimer from "@/app/functions/Timer";
 
 export default function Page() {
-  const timeLimit = 100000;
+  const timeLimit = 120000;
   useTimer(timeLimit);
   return (
     <>
