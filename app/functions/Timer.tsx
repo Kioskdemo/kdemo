@@ -1,3 +1,4 @@
+'use client'
 // useTimer.js
 "use client";
 
