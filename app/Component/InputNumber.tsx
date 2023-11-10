@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React, { useRef, useState } from "react";
-import CustomKeyboard from "./CustomKeyboard";
 import NextCancelBtn from "./NextCancelBtn";
+import KeyboardAlpha from "./KeyboardAlpha";
+import KeyboardSymbol from "./KeyboardSymbol";
 
 interface InputNumberProps {
   name: string;
@@ -17,10 +18,15 @@ const InputNumber: React.FC<InputNumberProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState("");
   const inputFieldRef = useRef<HTMLInputElement | null>(null);
+  const [activeKeyboard, setActiveKeyboard] = useState("alpha");
 
   const handleKeyClick = (key: string) => {
     if (key === "CLEAR") {
       setInputValue("");
+    } else if (key === "?123") {
+      setActiveKeyboard(activeKeyboard === "alpha" ? "symbol" : "alpha");
+    } else if (key === "ABC") {
+      setActiveKeyboard(activeKeyboard === "alpha" ? "symbol" : "alpha");
     } else if (key === "~") {
       const cursorPosition = inputFieldRef.current?.selectionStart || 0;
       if (cursorPosition > 0) {
@@ -30,6 +36,15 @@ const InputNumber: React.FC<InputNumberProps> = ({
         setInputValue(updatedValue);
         setCursorPosition(cursorPosition - 1);
       }
+    } else if (key === "SPACEBAR") {
+      // Change 'SPACEBAR' to the key of your choice for space
+      const cursorPosition = inputFieldRef.current?.selectionStart || 0;
+      const updatedValue =
+        inputValue.slice(0, cursorPosition) +
+        " " +
+        inputValue.slice(cursorPosition);
+      setInputValue(updatedValue);
+      setCursorPosition(cursorPosition + 1);
     } else {
       const cursorPosition = inputFieldRef.current?.selectionStart || 0;
       const updatedValue =
@@ -68,7 +83,12 @@ const InputNumber: React.FC<InputNumberProps> = ({
       />
 
       <div className="fixed bottom-0">
-        <CustomKeyboard handleKeyClick={handleKeyClick} />
+        {activeKeyboard === "alpha" ? (
+          <KeyboardAlpha handleKeyClick={handleKeyClick} />
+        ) : (
+          <KeyboardSymbol handleKeyClick={handleKeyClick} />
+        )}
+
         <div className="flex gap-24 text-[30px] justify-center my-10">
           <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
           <div className="text-white">

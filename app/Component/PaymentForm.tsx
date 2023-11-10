@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import InputText from "./InputText";
-import CustomKeyboard from "./CustomKeyboard";
+import CustomKeyboard from "./KeyboardAlpha";
 import NextCancelBtn from "./NextCancelBtn";
 
 interface PaymentFormProps {}

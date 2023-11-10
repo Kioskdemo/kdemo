@@ -6,7 +6,7 @@
 import InputText from "@/app/Component/InputText";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
-import CustomKeyboard from "@/app/Component/CustomKeyboard";
+import CustomKeyboard from "@/app/Component/KeyboardAlpha";
 import React, { useRef, useState } from "react";
 import BillingInformation from "@/app/Component/BillingInformation";
 
