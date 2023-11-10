@@ -29,14 +29,15 @@ export default function Page() {
           <div className="bg-black w-[200px] h-[1px] absolute top-[90px] left-[180px]"></div>
           <div className="bg-black w-[200px] h-[1px] absolute top-[90px] right-[180px]"></div>
         </div>
-        <div className="text-[50px] flex justify-center items-center pt-[50px] font-light">
+        <div className="text-[50px] flex justify-center items-center pt-[30px] font-light">
           <button
             onClick={() => {
               openModal();
             }}
             className="border border-black p-10 font-bold rounded-xl mt-[50px]"
           >
-            Scan your QR
+            <h1>Scan your QR</h1>
+            <p className="text-[22px]">Click to see the guild</p>
           </button>
         </div>
         <ModalScanQr isOpen={isModalOpen} onClose={closeModal} />
