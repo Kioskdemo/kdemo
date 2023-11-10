@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
+/* eslint-disable @next/next/no-img-element */  
 
 import React, { useRef } from "react";
 
@@ -16,11 +15,9 @@ const LandingPage = () => {
     { text: "Cedula" },
     { text: "Water" },
     { text: "Construction Permit" },
-
     { text: "Ordinance Violations" },
     { text: "Vehicle Registration" },
     { text: "Health Permit" },
-
     { text: "Work Permit" },
   ];
 

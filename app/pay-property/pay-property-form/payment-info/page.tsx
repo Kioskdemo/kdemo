@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+'use client'
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
 import PaymentForm from "@/app/Component/PaymentForm";

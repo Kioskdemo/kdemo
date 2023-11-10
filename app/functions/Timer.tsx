@@ -1,3 +1,4 @@
+'use client'
 // useTimer.js
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
