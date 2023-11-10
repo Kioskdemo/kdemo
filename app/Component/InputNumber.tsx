@@ -21,6 +21,20 @@ const InputNumber: React.FC<InputNumberProps> = ({
   const handleKeyClick = (key: string) => {
     if (key === "CLEAR") {
       setInputValue("");
+    } else if (key === "SPACEBAR") {
+      const cursorPosition = inputFieldRef.current?.selectionStart || 0;
+      if (cursorPosition > 0 ) {
+        const updatedValue =
+        inputValue.slice(0, cursorPosition) + ' ' + inputValue.slice(cursorPosition);
+        setInputValue(updatedValue);
+        setCursorPosition(cursorPosition + 1);
+      } else {
+        const cursorPosition = inputFieldRef.current?.selectionStart || 0;
+        const updatedValue =
+        inputValue.slice(0, cursorPosition) + key + inputValue.slice(cursorPosition);
+        setInputValue(updatedValue);
+        setCursorPosition(cursorPosition + 1);
+      }
     } else if (key === "~") {
       const cursorPosition = inputFieldRef.current?.selectionStart || 0;
       if (cursorPosition > 0) {

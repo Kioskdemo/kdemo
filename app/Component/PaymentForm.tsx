@@ -4,10 +4,9 @@ import InputText from "./InputText";
 import CustomKeyboard from "./CustomKeyboard";
 import NextCancelBtn from "./NextCancelBtn";
 
-interface PaymentFormProps {
-}
+interface PaymentFormProps {}
 
-const PaymentForm: React.FC<PaymentFormProps> = ({  }) => {
+const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
   const inputRefs = [
     useRef(null),
     useRef(null),
@@ -47,6 +46,20 @@ const PaymentForm: React.FC<PaymentFormProps> = ({  }) => {
             inputValues[inputIndex].slice(0, cursorPosition - 1) +
             inputValues[inputIndex].slice(cursorPosition);
           setCursorPosition(cursorPosition - 1);
+        }
+      } else if (key === "SPACEBAR") {
+        if (cursorPosition > 0) {
+          inputValues[inputIndex] =
+            inputValues[inputIndex].slice(0, cursorPosition) +
+            " " +
+            inputValues[inputIndex].slice(cursorPosition);
+          setCursorPosition(cursorPosition + 1);
+        } else {
+          inputValues[inputIndex] =
+            inputValues[inputIndex].slice(0, cursorPosition) +
+            key +
+            inputValues[inputIndex].slice(cursorPosition);
+          setCursorPosition(cursorPosition + 1);
         }
       } else {
         inputValues[inputIndex] =
