@@ -110,13 +110,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, heading, text }) => {
 
   return (
     <div className={`${styles.modalOverlay} z-[1]`}>
-      <div className="relative w-[80%]">
-        {/* <button
+      <div className="relative w-[66%]">
+        <button
           className="text-red-500 rounded-2xl absolute top-[15px] right-[15px]"
           onClick={onClose}
         >
           <IoCloseCircleOutline size={50} />
-        </button> */}
+        </button>
 
         <form className="flex flex-col justify-center items-center gap-2 bg-white rounded-2xl p-5 ">
           <h1 className="text-[35px] uppercase font-semibold">{heading}</h1>
