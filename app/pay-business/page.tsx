@@ -1,10 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import LabelStepper from "../Component/LabelStepper";
 import InputNumber from "../Component/InputNumber";
 import ScanQrGuide from "../Component/ScanQrGuide";
+import useTimer from "../functions/Timer";
 
 export default function Page() {
+  const timeLimit = 100000;
+  useTimer(timeLimit);
   return (
     <div className="">
       <LabelStepper stepNum={0} title={"Enter Bin"} />

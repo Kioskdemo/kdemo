@@ -1,28 +1,17 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
-import Link from "next/link";
-import React, { useEffect } from "react";
 import { BsTicketDetailed } from "react-icons/bs";
 import { GiPayMoney } from "react-icons/gi";
 import { BsBuildings } from "react-icons/bs";
 import { MdOutlineOtherHouses } from "react-icons/md";
-import { useRouter } from "next/navigation";
 
 import MenuButton from "../Component/MenuButton";
+import useTimer from "../functions/Timer";
 
 export default function page() {
-  const router = useRouter();
-
-  useEffect(() => {
-    const timeLimit = 10000;
-
-    const timer = setTimeout(() => {
-      router.push("/");
-    }, timeLimit);
-
-    return () => clearTimeout(timer);
-  });
+  const timeLimit = 10000;
+  useTimer(timeLimit);
 
   const menuConfig = [
     {

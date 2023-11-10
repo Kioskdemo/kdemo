@@ -1,8 +1,5 @@
 import React from "react";
 import CategoryOtherPayments from "../Component/CategoryOtherPayments";
-import BackButton from "../Component/BackButton";
-import NextBackButton from "../Component/Next&BackButton";
-import BackgroundImage from "../Component/BackgroundImage";
 import NextCancelBtn from "../Component/NextCancelBtn";
 
 export default function page() {

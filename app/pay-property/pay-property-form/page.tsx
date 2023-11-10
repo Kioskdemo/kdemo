@@ -8,8 +8,12 @@ import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
 import React, { useRef, useState } from "react";
 import BillingInformation from "@/app/Component/BillingInformation";
+import useTimer from "@/app/functions/Timer";
 
 export default function page() {
+  const timeLimit = 100000;
+  useTimer(timeLimit);
+
   const inputRefs = [
     useRef(null),
     useRef(null),
