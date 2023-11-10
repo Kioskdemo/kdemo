@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import InputText from "./InputText";
-import CustomKeyboard from "./KeyboardAlpha";
-import NextCancelBtn from "./NextCancelBtn";
+import KeyboardAlpha from "./KeyboardAlpha";
+import KeyboardSymbol from "./KeyboardSymbol";
 
 interface PaymentFormProps {}
 
@@ -18,6 +18,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
 
   const [inputValues, setInputValues] = useState(["", "", "", "", "", ""]);
   const activeInputRef = useRef(null);
+  const [activeKeyboard, setActiveKeyboard] = useState("alpha");
 
   const setCursorPosition = (position: number) => {
     const activeInput = activeInputRef.current as HTMLInputElement | null;
@@ -40,6 +41,10 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
 
       if (key === "CLEAR") {
         inputValues[inputIndex] = "";
+      } else if (key === "?123") {
+        setActiveKeyboard(activeKeyboard === "alpha" ? "symbol" : "alpha");
+      } else if (key === "ABC") {
+        setActiveKeyboard(activeKeyboard === "alpha" ? "symbol" : "alpha");
       } else if (key === "~") {
         if (cursorPosition > 0) {
           inputValues[inputIndex] =
@@ -112,7 +117,11 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
         {inputComponents[3]}
       </div>
       <div className="absolute bottom-40 w-full">
-        <CustomKeyboard handleKeyClick={handleKeyClick} />
+      {activeKeyboard === "alpha" ? (
+          <KeyboardAlpha handleKeyClick={handleKeyClick} />
+        ) : (
+          <KeyboardSymbol handleKeyClick={handleKeyClick} />
+        )}
       </div>
     </div>
   );

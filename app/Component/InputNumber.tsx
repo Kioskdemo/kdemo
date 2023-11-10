@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NextCancelBtn from "./NextCancelBtn";
 import KeyboardAlpha from "./KeyboardAlpha";
 import KeyboardSymbol from "./KeyboardSymbol";
@@ -16,6 +16,7 @@ const InputNumber: React.FC<InputNumberProps> = ({
   placeholder,
   link,
 }) => {
+
   const [inputValue, setInputValue] = useState("");
   const inputFieldRef = useRef<HTMLInputElement | null>(null);
   const [activeKeyboard, setActiveKeyboard] = useState("alpha");
@@ -68,6 +69,12 @@ const InputNumber: React.FC<InputNumberProps> = ({
     }
   };
 
+  useEffect(() => {
+    if (inputFieldRef.current) {
+      inputFieldRef.current.focus();
+    }
+  }, []);
+
   return (
     <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px]">
       <input
@@ -88,7 +95,6 @@ const InputNumber: React.FC<InputNumberProps> = ({
         ) : (
           <KeyboardSymbol handleKeyClick={handleKeyClick} />
         )}
-
         <div className="flex gap-24 text-[30px] justify-center my-10">
           <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
           <div className="text-white">
