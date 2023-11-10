@@ -5,15 +5,9 @@ interface MenuButtonProps {
   link: string;
   iconImg: ReactNode;
   title: string;
-  description: string;
 }
 
-const MenuButton: React.FC<MenuButtonProps> = ({
-  link,
-  iconImg,
-  title,
-  description,
-}) => {
+const MenuButton: React.FC<MenuButtonProps> = ({ link, iconImg, title }) => {
   return (
     <div className="capitalize">
       <Link href={link} className="text-[#335F96]">
