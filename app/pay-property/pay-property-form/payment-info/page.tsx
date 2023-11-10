@@ -1,5 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+<<<<<<< HEAD
 'use client'
+=======
+"use client";
+
+>>>>>>> 3a89ccb2432d11efa85d7c0a66de6389469c18b9
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
 import PaymentForm from "@/app/Component/PaymentForm";
