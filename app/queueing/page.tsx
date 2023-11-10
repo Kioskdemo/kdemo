@@ -6,8 +6,11 @@ import React, { useRef } from "react";
 import CategoryQue from "../Component/CategoryQue";
 
 import NextCancelBtn from "../Component/NextCancelBtn";
+import useTimer from "../functions/Timer";
 
 const LandingPage = () => {
+  const timeLimit = 100000;
+  useTimer(timeLimit);
 
   const queueConfig = [
     { text: "Cedula" },

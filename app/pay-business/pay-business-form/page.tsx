@@ -7,8 +7,11 @@ import React, { useRef, useState } from "react";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import LabelStepper from "@/app/Component/LabelStepper";
 import BillingInformation from "@/app/Component/BillingInformation";
+import useTimer from "@/app/functions/Timer";
 
 export default function Page() {
+  const timeLimit = 120000;
+  useTimer(timeLimit);
   return (
     <>
       <div className="flex flex-col justify-center items-center">

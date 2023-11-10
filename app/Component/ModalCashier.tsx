@@ -95,7 +95,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className={`${styles.modalOverlay} z-[1]`}>
-      <div className="relative w-[80%]">
+      <div className="relative w-[66%]">
         <button
           className="text-red-500 rounded-2xl absolute top-[15px] right-[15px]"
           onClick={onClose}
@@ -109,10 +109,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             height={100}
             width={150}
             quality={100}
-            className="pb-[70px]"
+            className=""
           />
           <h1 className="text-[35px] uppercase font-semibold">Queue No.</h1>
-          <p className="text-[70px] font-bold pb-[70px]">001</p>
+          <p className="text-[70px] font-bold ">001</p>
 
           <Image
             src={"/print.png"}

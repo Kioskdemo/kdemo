@@ -17,17 +17,19 @@ const CategoryQue: React.FC<CategoryQueProps> = ({ text }) => {
   };
 
   return (
-    <div className="w-full h-[100px] bg-white rounded-2xl  shadow-[-20px_22px_15px_-10px_rgba(0,0,0,0.3)] border border-[#335F96] flex justify-center items-center">
+    <div>
       <button
         onClick={() => {
           openModal();
         }}
+        className="w-full"
       >
-        <div className="flex items-center flex-col p-5 gap-3 ">
-          <span className="text-[30px] font-semibold text-black">{text}</span>
+        <div className=" h-[100px] bg-white rounded-2xl  shadow-[-20px_22px_15px_-10px_rgba(0,0,0,0.3)] border border-[#335F96] flex justify-center items-center">
+          <div className="flex items-center flex-col p-5 gap-3">
+            <span className="text-[30px] font-semibold text-black">{text}</span>
+          </div>
         </div>
       </button>
-
       <ModalPrint
         isOpen={isModalOpen}
         onClose={closeModal}
