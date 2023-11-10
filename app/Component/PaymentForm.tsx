@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import InputText from "./InputText";
 import KeyboardAlpha from "./KeyboardAlpha";
 import KeyboardSymbol from "./KeyboardSymbol";
+import { MultipleInputBox, setCursorPosition } from "../functions/KeyboardMultiBox";
 
 interface PaymentFormProps {}
 
@@ -16,66 +17,13 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
     useRef(null),
   ];
 
-  const [inputValues, setInputValues] = useState(["", "", "", "", "", ""]);
-  const activeInputRef = useRef(null);
-  const [activeKeyboard, setActiveKeyboard] = useState("alpha");
+  const [inputValue, setInputValue] = useState(['', '', '', '', '', '']);
+  const inputFieldRef = useRef<HTMLInputElement | null>(null);
+  const [activeKeyboard, setActiveKeyboard] = useState('alpha');
 
-  const setCursorPosition = (position: number) => {
-    const activeInput = activeInputRef.current as HTMLInputElement | null;
-    if (activeInput) {
-      setTimeout(() => {
-        activeInput.selectionStart = position;
-        activeInput.selectionEnd = position;
-        activeInput.focus();
-      }, 0);
-    }
-  };
-
-  const handleKeyClick = (key: string) => {
-    const activeInput = activeInputRef.current as HTMLInputElement | null;
-    if (activeInput) {
-      const cursorPosition = activeInput?.selectionStart || 0;
-      const inputIndex = inputRefs.findIndex(
-        (ref) => ref.current === activeInput
-      );
-
-      if (key === "CLEAR") {
-        inputValues[inputIndex] = "";
-      } else if (key === "?123") {
-        setActiveKeyboard(activeKeyboard === "alpha" ? "symbol" : "alpha");
-      } else if (key === "ABC") {
-        setActiveKeyboard(activeKeyboard === "alpha" ? "symbol" : "alpha");
-      } else if (key === "~") {
-        if (cursorPosition > 0) {
-          inputValues[inputIndex] =
-            inputValues[inputIndex].slice(0, cursorPosition - 1) +
-            inputValues[inputIndex].slice(cursorPosition);
-          setCursorPosition(cursorPosition - 1);
-        }
-      } else if (key === "SPACEBAR") {
-        if (cursorPosition > 0) {
-          inputValues[inputIndex] =
-            inputValues[inputIndex].slice(0, cursorPosition) +
-            " " +
-            inputValues[inputIndex].slice(cursorPosition);
-          setCursorPosition(cursorPosition + 1);
-        } else {
-          inputValues[inputIndex] =
-            inputValues[inputIndex].slice(0, cursorPosition) +
-            key +
-            inputValues[inputIndex].slice(cursorPosition);
-          setCursorPosition(cursorPosition + 1);
-        }
-      } else {
-        inputValues[inputIndex] =
-          inputValues[inputIndex].slice(0, cursorPosition) +
-          key +
-          inputValues[inputIndex].slice(cursorPosition);
-        setCursorPosition(cursorPosition + 1);
-      }
-
-      setInputValues([...inputValues]);
-    }
+  const MultiInput = (key: string) => {
+    const updatedValue = MultipleInputBox(key, inputValue, inputFieldRef, setActiveKeyboard);
+    setInputValue(updatedValue);
   };
 
   const inputConfig = [
@@ -97,12 +45,11 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
       placeholder={config.placeholder}
       size={config.size}
       inputRef={inputRefs[index]}
-      value={inputValues[index]}
+      value={inputValue[index]}
       name=""
       onclick={(e) => {
-        activeInputRef.current = inputRefs[index].current;
         const cursorPosition = e.currentTarget.selectionStart || 0;
-        setCursorPosition(cursorPosition);
+          setCursorPosition(inputFieldRef, cursorPosition);
       }}
       disabled={config.disabled}
     />
@@ -118,9 +65,9 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
       </div>
       <div className="absolute bottom-40 w-full">
       {activeKeyboard === "alpha" ? (
-          <KeyboardAlpha handleKeyClick={handleKeyClick} />
+          <KeyboardAlpha handleKeyClick={MultiInput} />
         ) : (
-          <KeyboardSymbol handleKeyClick={handleKeyClick} />
+          <KeyboardSymbol handleKeyClick={MultiInput} />
         )}
       </div>
     </div>
