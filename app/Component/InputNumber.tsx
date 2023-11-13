@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NextCancelBtn from "./NextCancelBtn";
 import KeyboardAlpha from "./KeyboardAlpha";
 import KeyboardSymbol from "./KeyboardSymbol";
@@ -31,6 +31,12 @@ const InputNumber: React.FC<InputNumberProps> = ({
     );
     setInputValue(updatedValue);
   };
+
+  useEffect(() => {
+    if (inputFieldRef.current) {
+      inputFieldRef.current.focus();
+    }
+  }, []);
 
   return (
     <div className="flex flex-col justify-center items-center gap-10 text-[40px] m-[10px]">

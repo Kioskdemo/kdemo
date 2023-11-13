@@ -1,65 +1,71 @@
-import { Dispatch, SetStateAction } from 'react';
+// KeyboardMulti.tsx
+import React from "react";
 
-export const MultipleInputBox = (
-  key: string,
-  inputValue: string[],
-  inputFieldRef: React.RefObject<HTMLInputElement | null>,
-  setActiveKeyboard: Dispatch<SetStateAction<string>>
-): string[] => {
-  const updatedValue = [...inputValue]; // Create a copy of inputValue to avoid mutating state directly
-
-  const inputIndex = inputFieldRef.current
-    ? parseInt(inputFieldRef.current.dataset.index || '', 10)
-    : undefined;
-
-  if (inputIndex === undefined) {
-    return updatedValue;
+export const setCursorPosition = (
+  position: number,
+  activeInput: HTMLInputElement | null
+) => {
+  if (activeInput) {
+    setTimeout(() => {
+      activeInput.selectionStart = position;
+      activeInput.selectionEnd = position;
+      activeInput.focus();
+    }, 0);
   }
-
-  if (key === 'CLEAR') {
-    updatedValue.fill('');
-  } else if (key === '?123') {
-    setActiveKeyboard((prevKeyboard) =>
-      prevKeyboard === 'alpha' ? 'symbol' : 'alpha'
-    );
-  } else if (key === 'ABC') {
-    setActiveKeyboard((prevKeyboard) =>
-      prevKeyboard === 'alpha' ? 'symbol' : 'alpha'
-    );
-  } else if (key === '~') {
-    const cursorPosition = inputFieldRef.current?.selectionStart || 0;
-    if (cursorPosition > 0) {
-      updatedValue[inputIndex] =
-        updatedValue[inputIndex].slice(0, cursorPosition - 1) +
-        updatedValue[inputIndex].slice(cursorPosition);
-      setCursorPosition(inputFieldRef, cursorPosition - 1);
-    }
-  } else if (key === 'SPACEBAR') {
-    const cursorPosition = inputFieldRef.current?.selectionStart || 0;
-    updatedValue[inputIndex] =
-      updatedValue[inputIndex].slice(0, cursorPosition) +
-      ' ' +
-      updatedValue[inputIndex].slice(cursorPosition);
-    setCursorPosition(inputFieldRef, cursorPosition + 1);
-  } else {
-    const cursorPosition = inputFieldRef.current?.selectionStart || 0;
-    updatedValue[inputIndex] =
-      updatedValue[inputIndex].slice(0, cursorPosition) +
-      key +
-      updatedValue[inputIndex].slice(cursorPosition);
-    setCursorPosition(inputFieldRef, cursorPosition + 1);
-  }
-  return updatedValue;
 };
 
-export const setCursorPosition = (inputFieldRef: React.RefObject<HTMLInputElement | null>, position: number): void => {
-  if (inputFieldRef.current) {
-    setTimeout(() => {
-      if (inputFieldRef.current) {
-        inputFieldRef.current.selectionStart = position;
-        inputFieldRef.current.selectionEnd = position;
-        inputFieldRef.current.focus();
+export const handleKeyClick = (
+  key: string,
+  activeInputRef: React.RefObject<HTMLInputElement | null>,
+  inputValue: string[],
+  setInputValue: React.Dispatch<React.SetStateAction<string[]>>,
+  inputRefs: (React.RefObject<HTMLInputElement | null>)[],
+  setActiveKeyboard: React.Dispatch<React.SetStateAction<string>>
+) => {
+  const activeInput = activeInputRef.current as HTMLInputElement | null;
+
+  if (activeInput) {
+    const cursorPosition = activeInput?.selectionStart || 0;
+    const inputIndex = inputValue.findIndex(
+      (_, index) => inputRefs[index].current === activeInput
+    );
+
+    if (key === "CLEAR") {
+      inputValue[inputIndex] = "";
+    }else if (key === "?123") {
+      setActiveKeyboard((prevKeyboard) =>
+        prevKeyboard === "alpha" ? "symbol" : "alpha"
+      );
+    } else if (key === "ABC") {
+      setActiveKeyboard((prevKeyboard) =>
+        prevKeyboard === "alpha" ? "symbol" : "alpha"
+      );
+    } else if (key === "~") {
+      if (cursorPosition > 0) {
+        inputValue[inputIndex] =
+          inputValue[inputIndex].slice(0, cursorPosition - 1) +
+          inputValue[inputIndex].slice(cursorPosition);
+        setCursorPosition(cursorPosition - 1, activeInput);
       }
-    }, 0);
+    } else if (key === "SPACEBAR") {
+      if (cursorPosition >= 0) {
+        inputValue[inputIndex] =
+          inputValue[inputIndex].slice(0, cursorPosition) +
+          " " +
+          inputValue[inputIndex].slice(cursorPosition);
+        setCursorPosition(cursorPosition + 1, activeInput);
+      } else {
+        inputValue[inputIndex] =
+          key + inputValue[inputIndex].slice(cursorPosition);
+        setCursorPosition(cursorPosition + 1, activeInput);
+      }
+    } else {
+      inputValue[inputIndex] =
+        inputValue[inputIndex].slice(0, cursorPosition) +
+        key +
+        inputValue[inputIndex].slice(cursorPosition);
+      setCursorPosition(cursorPosition + 1, activeInput);
+    }
+    setInputValue([...inputValue]);
   }
 };
