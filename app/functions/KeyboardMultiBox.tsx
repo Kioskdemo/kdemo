@@ -19,7 +19,7 @@ export const handleKeyClick = (
   activeInputRef: React.RefObject<HTMLInputElement | null>,
   inputValue: string[],
   setInputValue: React.Dispatch<React.SetStateAction<string[]>>,
-  inputRefs: (React.RefObject<HTMLInputElement | null>)[],
+  inputRefs: React.RefObject<HTMLInputElement | null>[],
   setActiveKeyboard: React.Dispatch<React.SetStateAction<string>>
 ) => {
   const activeInput = activeInputRef.current as HTMLInputElement | null;
@@ -32,7 +32,7 @@ export const handleKeyClick = (
 
     if (key === "CLEAR") {
       inputValue[inputIndex] = "";
-    }else if (key === "?123") {
+    } else if (key === "?123") {
       setActiveKeyboard((prevKeyboard) =>
         prevKeyboard === "alpha" ? "symbol" : "alpha"
       );

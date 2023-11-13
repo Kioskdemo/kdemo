@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ModalPayOption from "./ModalPayOption";
+import billingInformationData from "../configJSON/billingInfo.json";
 
 interface BillingInformationProps {}
 
@@ -13,6 +14,9 @@ const BillingInformation: React.FC<BillingInformationProps> = ({}) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  const billingInformation = billingInformationData.billingInformation;
+
   return (
     <div className="text-[25px]">
       <h1 className="text-[35px] text-green-500 pb-[50px]">
@@ -30,13 +34,13 @@ const BillingInformation: React.FC<BillingInformationProps> = ({}) => {
             <p>Business Address</p>
           </div>
           <div className="uppercase flex flex-col gap-3">
-            <p>815420180800043-3D</p>
-            <p>NEW</p>
-            <p>2018-08-17</p>
-            <p>815420180800043</p>
-            <p>rameses systems inc.</p>
-            <p>RAMESES SYSTEMS INC.</p>
-            <p>TAGBILARAN CITY CEBU</p>
+            <p>{billingInformation.applicationNo}</p>
+            <p>{billingInformation.applicationType}</p>
+            <p>{billingInformation.datedFiled}</p>
+            <p>{billingInformation.bin}</p>
+            <p>{billingInformation.tradeName}</p>
+            <p>{billingInformation.ownerName}</p>
+            <p>{billingInformation.businessAddress}</p>
           </div>
         </div>
         <div>

@@ -1,4 +1,4 @@
-const paymentFormConfig = [
+const inputConfig = [
   { label: "Paid by", placeholder: "Type Here", size: 39 },
 
   { label: "Payer Address", placeholder: "Type Here", size: 39 },
@@ -11,4 +11,4 @@ const paymentFormConfig = [
   { label: "Amount", placeholder: "150", size: 39, disabled: true },
 ];
 
-export default paymentFormConfig;
+export default inputConfig;

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // PaymentForm.tsx
 import React, { useEffect, useRef, useState } from "react";
 import InputText from "./InputText";
@@ -7,8 +8,7 @@ import {
   setCursorPosition,
   handleKeyClick,
 } from "../functions/KeyboardMultiBox";
-import PaymentFormMap from "./PaymentFormMap";
-import paymentFormConfig from "../configJSON/paymentFormConfig";
+import inputConfig from "../configJSON/paymentJson";
 
 const PaymentForm = () => {
   const inputRefs: React.RefObject<HTMLInputElement | null>[] = [
@@ -24,19 +24,7 @@ const PaymentForm = () => {
     if (inputRefs[0] && inputRefs[0].current) {
       inputRefs[0].current.focus();
     }
-  }, []);
-
-  // const inputConfig = [
-  //   { label: "Paid by", placeholder: "Type Here", size: 39 },
-  //   { label: "Payer Address", placeholder: "Type Here", size: 39 },
-  //   {
-  //     label: "Particulars",
-  //     placeholder: "cedula",
-  //     size: 39,
-  //     disabled: true,
-  //   },
-  //   { label: "Amount", placeholder: "150", size: 39, disabled: true },
-  // ];
+  }, [inputRefs]);
 
   const inputComponents = inputConfig.map((config, index) => (
     <InputText
@@ -56,14 +44,16 @@ const PaymentForm = () => {
     />
   ));
 
+  for (let i = 0; i < inputComponents.length; i++) {
+    inputComponents[i];
+  }
+
   return (
     <div className="text-[25px]">
       <div className="justify-center">
-        {/* {inputComponents[0]}
-        {inputComponents[1]}
-        {inputComponents[2]}
-        {inputComponents[3]} */}
-        {PaymentFormMap({ paymentFormConfig })}
+        {inputComponents.map((component, index) => (
+          <React.Fragment key={index}>{component}</React.Fragment>
+        ))}
       </div>
       <div className="absolute bottom-40 w-full">
         {activeKeyboard === "alpha" ? (
