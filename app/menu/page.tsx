@@ -6,8 +6,8 @@ import MenuMap from "../Component/MenuMap";
 import menuConfig from "../configJSON/menuConfig";
 
 export default function page() {
-  // const timeLimit = 10000;
-  // useTimer(timeLimit);
+  const timeLimit = 10000;
+  useTimer(timeLimit);
 
   return (
     <div className="mt-[100px]">

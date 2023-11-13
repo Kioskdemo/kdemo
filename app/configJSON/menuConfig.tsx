@@ -5,22 +5,22 @@ import { MdOutlineOtherHouses } from "react-icons/md";
 const menuConfig = [
   {
     link: "/queueing",
-    iconImg: <BsTicketDetailed size={130} className=" text-[#1b1b1b]" />,
+    iconImg: <BsTicketDetailed size={90} className=" text-[#1b1b1b]" />,
     title: "Queue Number",
   },
   {
     link: "/pay-business",
-    iconImg: <GiPayMoney size={130} className="text-[#1b1b1b]" />,
+    iconImg: <GiPayMoney size={90} className="text-[#1b1b1b]" />,
     title: "Pay Business",
   },
   {
     link: "/pay-property",
-    iconImg: <BsBuildings size={130} className="text-[#1b1b1b]" />,
+    iconImg: <BsBuildings size={90} className="text-[#1b1b1b]" />,
     title: "Pay Property",
   },
   {
     link: "/other-payments",
-    iconImg: <MdOutlineOtherHouses size={130} className="text-[#1b1b1b]" />,
+    iconImg: <MdOutlineOtherHouses size={90} className="text-[#1b1b1b]" />,
     title: "Other Payments",
   },
 ];

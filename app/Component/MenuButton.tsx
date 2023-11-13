@@ -9,14 +9,13 @@ interface MenuButtonProps {
 
 const MenuButton: React.FC<MenuButtonProps> = ({ link, iconImg, title }) => {
   return (
-    <div className="capitalize">
+    <div className="uppercase">
       <Link href={link} className="text-[#335F96]">
-        <div className="w-[200px] h-[200px] bg-white rounded-[50%] text-[#335F96] shadow-[-20px_22px_15px_-10px_rgba(0,0,0,0.3)] border border-[#335F96] flex flex-col items-center justify-center gap-5">
-          {" "}
-          <div className="">{iconImg}</div>
+        <div className="w-[200px] h-[200px] bg-white rounded-[50%] text-[#335F96] shadow-[-20px_18px_15px_-10px_rgba(0,0,0,0.3)] border border-[#335F96] flex items-center justify-center">
+          {iconImg}
         </div>
 
-        <h1 className="text-[25px] font-bold">{title}</h1>
+        <h1 className="text-[24px] font-bold text-center pt-5 ">{title}</h1>
       </Link>
     </div>
   );

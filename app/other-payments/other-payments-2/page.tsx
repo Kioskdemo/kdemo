@@ -1,7 +1,4 @@
-import BackButton from "@/app/Component/BackButton";
-import BackgroundImage from "@/app/Component/BackgroundImage";
 import CategoryOtherPayments from "@/app/Component/CategoryOtherPayments";
-import NextBackButton from "@/app/Component/Next&BackButton";
 import NextCancelBtn from "@/app/Component/NextCancelBtn";
 import React from "react";
 

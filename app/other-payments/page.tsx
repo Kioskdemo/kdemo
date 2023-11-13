@@ -1,29 +1,15 @@
 import React from "react";
-import CategoryOtherPayments from "../Component/CategoryOtherPayments";
+
 import NextCancelBtn from "../Component/NextCancelBtn";
+import OtherPaymentsMap from "../Component/OtherPaymentsMap";
+import otherPaymentsConfig from "../configJSON/otherPaymentsConfig";
 
 export default function page() {
-  const paymentTypesConfig = [
-    { link: "/other-payments/cedula", text: "Cedula" },
-    { link: "", text: "Water" },
-    { link: "", text: "Building Construction Permit" },
-    { link: "", text: "Market Rental" },
-    { link: "", text: "Vehichle Registration" },
-  ];
-
-  const paymentTypesComponents = paymentTypesConfig.map((config, index) => (
-    <CategoryOtherPayments key={index} link={config.link} text={config.text} />
-  ));
-
   return (
     <div className="mt-[100px]">
       <main className=" flex flex-col justify-center w-full">
         <div className="flex flex-col justify-center items-center gap-10 text-[35px]">
-          {paymentTypesComponents[0]}
-          {paymentTypesComponents[1]}
-          {paymentTypesComponents[2]}
-          {paymentTypesComponents[3]}
-          {paymentTypesComponents[4]}
+          {OtherPaymentsMap({ otherPaymentsConfig })}
           <div className="flex gap-24 text-[30px] justify-center pt-10 w-full absolute bottom-8">
             <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
             <div className="text-white">

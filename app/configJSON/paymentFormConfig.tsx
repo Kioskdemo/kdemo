@@ -1,0 +1,14 @@
+const paymentFormConfig = [
+  { label: "Paid by", placeholder: "Type Here", size: 39 },
+
+  { label: "Payer Address", placeholder: "Type Here", size: 39 },
+  {
+    label: "Particulars",
+    placeholder: "cedula",
+    size: 39,
+    disabled: true,
+  },
+  { label: "Amount", placeholder: "150", size: 39, disabled: true },
+];
+
+export default paymentFormConfig;
