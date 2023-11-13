@@ -2,25 +2,21 @@ import React, { useRef, useState } from "react";
 import NextCancelBtn from "./NextCancelBtn";
 import KeyboardAlpha from "./KeyboardAlpha";
 import KeyboardSymbol from "./KeyboardSymbol";
-import { handleKeyClick, setCursorPosition } from "../functions/KeyboardUtils";
+import { SingleInputBox, setCursorPosition } from "../functions/KeyboardSingleBox";
 
 interface InputNumberProps {
   name: string;
   placeholder: string;
-  link: string;
 }
 
-const InputNumber: React.FC<InputNumberProps> = ({
-  name,
-  placeholder,
-  link,
-}) => {
+const InputNumber: React.FC<InputNumberProps> = ({ name, placeholder }) => {
+  
   const [inputValue, setInputValue] = useState("");
   const inputFieldRef = useRef<HTMLInputElement | null>(null);
   const [activeKeyboard, setActiveKeyboard] = useState("alpha");
 
-  const handleKeyClickWrapper = (key: string) => {
-    const updatedValue = handleKeyClick(key, inputValue, inputFieldRef, setActiveKeyboard);
+  const SingleInput = (key: string) => {
+    const updatedValue = SingleInputBox(key, inputValue, inputFieldRef, setActiveKeyboard);
     setInputValue(updatedValue);
   };
 
@@ -40,15 +36,15 @@ const InputNumber: React.FC<InputNumberProps> = ({
 
       <div className="fixed bottom-0">
         {activeKeyboard === "alpha" ? (
-          <KeyboardAlpha handleKeyClick={handleKeyClickWrapper} />
+          <KeyboardAlpha handleKeyClick={SingleInput} />
         ) : (
-          <KeyboardSymbol handleKeyClick={handleKeyClickWrapper} />
+          <KeyboardSymbol handleKeyClick={SingleInput} />
         )}
 
         <div className="flex gap-24 text-[30px] justify-center my-10">
           <NextCancelBtn link={"/menu"} text={"Back"} bgcolor={"#fff"} />
           <div className="text-white">
-            <NextCancelBtn link={link} text={"Next"} bgcolor={"#005893"} />
+            <NextCancelBtn link={"/pay-business/pay-business-form"} text={"Next"} bgcolor={"#005893"} />
           </div>
         </div>
       </div>

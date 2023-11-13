@@ -1,4 +1,4 @@
-export const handleKeyClick = (
+export const SingleInputBox = (
     key: string,
     inputValue: string,
     inputFieldRef: React.RefObject<HTMLInputElement | null>,

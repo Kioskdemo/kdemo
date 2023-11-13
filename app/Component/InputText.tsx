@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 interface BusinessFormProps {
   inputRef: React.MutableRefObject<HTMLInputElement | null>;
@@ -20,6 +20,7 @@ const InputText: React.FC<BusinessFormProps> = ({
   onclick,
   disabled,
 }) => {
+  
   return (
     <div className="flex justify-center gap-5 text-[30px] p-2">
       <div className="flex flex-col">
