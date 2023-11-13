@@ -1,25 +1,25 @@
-"use client";
-import React, { useRef, useState } from "react";
+// PaymentForm.tsx
+import React, { useEffect, useRef, useState } from "react";
 import InputText from "./InputText";
 import KeyboardAlpha from "./KeyboardAlpha";
 import KeyboardSymbol from "./KeyboardSymbol";
+import { setCursorPosition, handleKeyClick } from "../functions/KeyboardMultiBox";
 
-interface PaymentFormProps {}
-
-const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
+const PaymentForm = () => {
   const inputRefs: (React.RefObject<HTMLInputElement | null>)[] = [
     useRef(null),
     useRef(null)
   ];
 
-  const [inputValues, setInputValues] = useState(["", ""]);
+  const [inputValue, setInputValue] = useState(["", ""]);
   const activeInputRef = useRef<HTMLInputElement | null>(null);
   const [activeKeyboard, setActiveKeyboard] = useState("alpha");
 
-  const handleKeyClickWrapper = (key: string) => {
-    const updatedValues = handleKeyClick(key, inputValues, activeInputRef, setActiveKeyboard);
-    setInputValues(updatedValues);
-  };
+  useEffect(() => {
+    if (inputRefs[0] && inputRefs[0].current) {
+      inputRefs[0].current.focus();
+    }
+  }, []);
 
   const inputConfig = [
     { label: "Paid by", placeholder: "Type Here", size: 39 },
@@ -40,18 +40,12 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
       placeholder={config.placeholder}
       size={config.size}
       inputRef={inputRefs[index]}
-      value={inputValues[index]}
+      value={inputValue[index]}
       name=""
       onclick={(e) => {
+        activeInputRef.current = inputRefs[index].current;
         const cursorPosition = e.currentTarget.selectionStart || 0;
-        const activeInput = activeInputRef.current as HTMLInputElement | null;
-        if (activeInput) {
-          setTimeout(() => {
-            activeInput.selectionStart = cursorPosition;
-            activeInput.selectionEnd = cursorPosition;
-            activeInput.focus();
-          }, 0);
-        }
+        setCursorPosition(cursorPosition, activeInputRef.current);
       }}
       disabled={config.disabled}
     />
@@ -67,9 +61,31 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
       </div>
       <div className="absolute bottom-40 w-full">
         {activeKeyboard === "alpha" ? (
-          <KeyboardAlpha handleKeyClick={handleKeyClickWrapper} />
+          <KeyboardAlpha
+            handleKeyClick={(key) =>
+              handleKeyClick(
+                key,
+                activeInputRef,
+                inputValue,
+                setInputValue,
+                inputRefs,
+                setActiveKeyboard
+              )
+            }
+          />
         ) : (
-          <KeyboardSymbol handleKeyClick={handleKeyClickWrapper} />
+          <KeyboardSymbol
+            handleKeyClick={(key) =>
+              handleKeyClick(
+                key,
+                activeInputRef,
+                inputValue,
+                setInputValue,
+                inputRefs,
+                setActiveKeyboard
+              )
+            }
+          />
         )}
       </div>
     </div>
