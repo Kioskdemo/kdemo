@@ -3,27 +3,22 @@ import React, { useRef, useState } from "react";
 import InputText from "./InputText";
 import KeyboardAlpha from "./KeyboardAlpha";
 import KeyboardSymbol from "./KeyboardSymbol";
-import { MultipleInputBox, setCursorPosition } from "../functions/KeyboardMultiBox";
 
 interface PaymentFormProps {}
 
 const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
-  const inputRefs = [
+  const inputRefs: (React.RefObject<HTMLInputElement | null>)[] = [
     useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
+    useRef(null)
   ];
 
-  const [inputValue, setInputValue] = useState(['', '', '', '', '', '']);
-  const inputFieldRef = useRef<HTMLInputElement | null>(null);
-  const [activeKeyboard, setActiveKeyboard] = useState('alpha');
+  const [inputValues, setInputValues] = useState(["", ""]);
+  const activeInputRef = useRef<HTMLInputElement | null>(null);
+  const [activeKeyboard, setActiveKeyboard] = useState("alpha");
 
-  const MultiInput = (key: string) => {
-    const updatedValue = MultipleInputBox(key, inputValue, inputFieldRef, setActiveKeyboard);
-    setInputValue(updatedValue);
+  const handleKeyClickWrapper = (key: string) => {
+    const updatedValues = handleKeyClick(key, inputValues, activeInputRef, setActiveKeyboard);
+    setInputValues(updatedValues);
   };
 
   const inputConfig = [
@@ -45,11 +40,18 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
       placeholder={config.placeholder}
       size={config.size}
       inputRef={inputRefs[index]}
-      value={inputValue[index]}
+      value={inputValues[index]}
       name=""
       onclick={(e) => {
         const cursorPosition = e.currentTarget.selectionStart || 0;
-          setCursorPosition(inputFieldRef, cursorPosition);
+        const activeInput = activeInputRef.current as HTMLInputElement | null;
+        if (activeInput) {
+          setTimeout(() => {
+            activeInput.selectionStart = cursorPosition;
+            activeInput.selectionEnd = cursorPosition;
+            activeInput.focus();
+          }, 0);
+        }
       }}
       disabled={config.disabled}
     />
@@ -64,10 +66,10 @@ const PaymentForm: React.FC<PaymentFormProps> = ({}) => {
         {inputComponents[3]}
       </div>
       <div className="absolute bottom-40 w-full">
-      {activeKeyboard === "alpha" ? (
-          <KeyboardAlpha handleKeyClick={MultiInput} />
+        {activeKeyboard === "alpha" ? (
+          <KeyboardAlpha handleKeyClick={handleKeyClickWrapper} />
         ) : (
-          <KeyboardSymbol handleKeyClick={MultiInput} />
+          <KeyboardSymbol handleKeyClick={handleKeyClickWrapper} />
         )}
       </div>
     </div>
