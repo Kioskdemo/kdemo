@@ -40,7 +40,7 @@ export const handleKeyClick = (
       setActiveKeyboard((prevKeyboard) =>
         prevKeyboard === "alpha" ? "symbol" : "alpha"
       );
-    } else if (key === "~") {
+    } else if (key === " ⓑ") {
       if (cursorPosition > 0) {
         inputValue[inputIndex] =
           inputValue[inputIndex].slice(0, cursorPosition - 1) +
