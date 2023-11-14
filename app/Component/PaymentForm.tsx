@@ -8,7 +8,7 @@ import {
   setCursorPosition,
   handleKeyClick,
 } from "../functions/KeyboardMultiBox";
-import inputConfig from "../configJSON/paymentJson";
+import inputConfig from "../configJSON/paymentJson.json";
 
 const PaymentForm = () => {
   const inputRefs: React.RefObject<HTMLInputElement | null>[] = [

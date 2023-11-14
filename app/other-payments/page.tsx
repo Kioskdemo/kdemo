@@ -2,7 +2,7 @@ import React from "react";
 
 import NextCancelBtn from "../Component/NextCancelBtn";
 import OtherPaymentsMap from "../Component/OtherPaymentsMap";
-import otherPaymentsConfig from "../configJSON/otherPaymentsConfig";
+import otherPaymentsConfig from "../configJSON/otherPaymentsConfig.json";
 
 export default function page() {
   return (
