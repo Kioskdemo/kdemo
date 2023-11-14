@@ -279,7 +279,7 @@ const KeyboardAlpha = ({
                 {key}
               </button>
             ))}
-            {[`~`].map((key) => (
+            {[` ⓑ`].map((key) => (
               <div
                 className="bg-white text-white border border-gray-400 rounded-lg font-bold text-xs shadow-[9px_2px_15px_0px_rgba(0,0,0,0.3)] w-[70px] h-[70px] m-[5px]"
                 onClick={() => handleKeyClick(key)}
