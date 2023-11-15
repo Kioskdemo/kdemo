@@ -81,7 +81,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, heading, text }) => {
           <ComponentToPrint heading="Queue No." number={101} />
         </div>
       );
-      printWindow.moveBy(10000, 10000);
+      printWindow.moveBy(100000, 100000);
       printWindow.document.write(`
         <html>
         <head>
