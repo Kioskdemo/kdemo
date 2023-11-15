@@ -3,10 +3,11 @@ import React, { ReactNode, useEffect, useState } from "react";
 import styles from "../Modal.module.css";
 import Image from "next/image";
 import { TiArrowDownThick } from "react-icons/ti";
-import { ComponentToPrint } from "./PrintableContent";
+
 import ReactDOMServer from "react-dom/server";
 import Link from "next/link";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import ComponentToPrint from "./PrintableContent";
 
 interface ModalProps {
   isOpen: boolean;
@@ -63,7 +64,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     if (printWindow) {
       const content = (
         <div>
-          <ComponentToPrint />
+          <ComponentToPrint heading="Queue No." number={101} />
         </div>
       );
       printWindow.moveBy(10000, 10000);
