@@ -6,7 +6,7 @@ import Image from "next/image";
 import { TiArrowDownThick } from "react-icons/ti";
 import Link from "next/link";
 import ReactDOMServer from "react-dom/server";
-import { ComponentToPrint } from "./PrintableContent";
+import ComponentToPrint from "./PrintableContent";
 import { IoCloseCircleOutline } from "react-icons/io5";
 
 interface ModalProps {
@@ -78,7 +78,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, heading, text }) => {
     if (printWindow) {
       const content = (
         <div>
-          <ComponentToPrint />
+          <ComponentToPrint heading="Queue No." number={101} />
         </div>
       );
       printWindow.moveBy(10000, 10000);

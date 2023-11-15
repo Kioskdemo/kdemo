@@ -1,14 +1,21 @@
 import React from "react";
 
-export class ComponentToPrint extends React.PureComponent {
+interface PrintableContentProps {
+  heading: string;
+  number: number;
+}
+
+class ComponentToPrint extends React.PureComponent<PrintableContentProps> {
   render() {
+    const { heading, number } = this.props;
+
     return (
       <>
         <div className="padding">
           <div id="mid">
             <div className="info">
-              <h2 className="">Queue No.</h2>
-              <p className="para-adjust">Q-001</p>
+              <h2 className="">{heading}</h2>
+              <p className="para-adjust">{`Q-${number}`}</p>
             </div>
           </div>
         </div>
@@ -16,3 +23,5 @@ export class ComponentToPrint extends React.PureComponent {
     );
   }
 }
+
+export default ComponentToPrint;
