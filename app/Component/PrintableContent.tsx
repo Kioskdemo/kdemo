@@ -10,8 +10,8 @@ const PrintableContent: ForwardRefRenderFunction<
   HTMLDivElement,
   PrintableContentProps
 > = ({ heading, number }, ref: Ref<HTMLDivElement>) => (
-  <div ref={ref} className="flex flex-col justify-center items-center">
-    <div className=" text-4xl text-center">
+  <div ref={ref} className="flex flex-col justify-center items-center text-4xl">
+    <div className="text-4xl">
       <h2>{heading}</h2>
       <p className="">{`Q-${number}`}</p>
     </div>
