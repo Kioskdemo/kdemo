@@ -1,8 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode, useEffect, useRef } from "react";
 import styles from "../Modal.module.css";
-import { AiTwotonePrinter } from "react-icons/ai";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { TiArrowDownThick } from "react-icons/ti";
+import Link from "next/link";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { useReactToPrint } from "react-to-print";
+import PrintableContent from "./PrintableContent";
 
 interface ModalProps {
   isOpen: boolean;
@@ -13,28 +17,50 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, heading, text }) => {
   if (!isOpen) return null;
+  const componentRef = useRef<any>();
 
-  const router = useRouter();
-
-  useEffect(() => {
-    const timeLimit = 2000;
-
-    const timer = setTimeout(() => {
-      router.push("/");
-    }, timeLimit);
-
-    return () => clearTimeout(timer);
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
   });
 
   return (
-    <div className={styles.modalOverlay}>
-      <div className="relative">
-        <div className="flex text-[30px] bg-white w-[400px] h-[500px] shadow-[-15px_23px_15px_-10px_rgba(0,0,0,0.4)] border border-[#335F96] rounded-2xl flex-col items-center justify-center gap-5 m-10">
-          <h1>{heading}</h1>
-          <AiTwotonePrinter size={150} className="text-[#335F96]" />
-          <div className="w-[50px] h-[50px] border-t-[3px] border-l-[3px]   border-[#335F96] rounded-[50%] animate-spin"></div>
-          <p className="text-red-500">{text}</p>
+    <div className={`${styles.modalOverlay} z-[1]`}>
+      <div className="relative w-[66%]">
+        <button
+          className="text-red-500 rounded-2xl absolute top-[15px] right-[15px]"
+          onClick={onClose}
+        >
+          <IoCloseCircleOutline size={50} />
+        </button>
+
+        <form className="flex flex-col justify-center items-center gap-2 bg-white rounded-2xl p-5 ">
+        <div className="invisible">
+        <PrintableContent ref={componentRef} heading={heading} number={1} />
         </div>
+          <h1 className="text-[35px] uppercase font-semibold">{heading}</h1>
+          <p className="text-[70px] font-bold pb-[70px]">{text}</p>
+
+          <Image
+            src={"/print.png"}
+            alt={""}
+            height={100}
+            width={150}
+            quality={100}
+            className="pb-[70px]"
+          />
+          <TiArrowDownThick
+            size={50}
+            className="absolute bottom-20 animate-bounce"
+          />
+          <Link href={"/menu"}>
+            <button
+              onClick={handlePrint}
+              className="bg-[#335F96] px-20 rounded-2xl text-white font-semibold"
+            >
+              Print
+            </button>
+          </Link>
+        </form>
       </div>
     </div>
   );
