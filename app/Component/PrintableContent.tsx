@@ -1,27 +1,18 @@
-import React from "react";
+// PrintableContent.tsx
+import React, { forwardRef, ForwardRefRenderFunction, Ref } from "react";
 
 interface PrintableContentProps {
   heading: string;
   number: number;
 }
 
-class ComponentToPrint extends React.PureComponent<PrintableContentProps> {
-  render() {
-    const { heading, number } = this.props;
+const PrintableContent: ForwardRefRenderFunction<HTMLDivElement, PrintableContentProps> = ({ heading, number }, ref: Ref<HTMLDivElement>) => (
+  <div ref={ref} className="flex flex-col justify-center items-center">
+    <div className="">
+      <h2>{heading}</h2>
+      <p className="">{`Q-${number}`}</p>
+    </div>
+  </div>
+);
 
-    return (
-      <>
-        <div className="padding">
-          <div id="mid">
-            <div className="info">
-              <h2 className="">{heading}</h2>
-              <p className="para-adjust">{`Q-${number}`}</p>
-            </div>
-          </div>
-        </div>
-      </>
-    );
-  }
-}
-
-export default ComponentToPrint;
+export default forwardRef(PrintableContent);
