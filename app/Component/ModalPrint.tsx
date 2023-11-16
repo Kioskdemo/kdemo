@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { ReactNode, useEffect } from "react";
 import styles from "../Modal.module.css";
-import Link from "next/link";
 import { AiTwotonePrinter } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
