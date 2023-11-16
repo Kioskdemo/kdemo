@@ -40,7 +40,7 @@ const ScanQrGuide: React.FC<GuildProps> = ({
 
         <h1>{heading2}</h1>
         <div className="relative">
-          <p className="text-[20px] uppercase absolute right-[35px] top-[170px]">
+          <p className="text-[20px] uppercase absolute right-[35px] top-[190px]">
             {iconImg}
           </p>
         </div>
